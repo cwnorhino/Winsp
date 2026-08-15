@@ -1,125 +1,163 @@
+from __future__ import annotations
+
 import json
 import os
 import time
-import numpy as np
+
 import cv2
+import numpy as np
 import torch
-from torch.utils.data import Dataset 
+import torch.nn.functional as F
 
-class WinspPairDataset(Dataset):
-    """
+import geometry
+from model import SiamNCCLocalizer
 
-    WHY THIS DESIGN:
-    The synthetic generator already produces physically-grounded (reference, search,
-    ground_truth) triples with known center coordinates in the SEARCH image's pixel
-    space (center_x_wide_px, center_y_wide_px). Pairs are read from disk rather than
-    generated on-the-fly during training, because generation is expensive (Poisson
-    sampling, multiple Gaussian blurs, low-frequency field resizing) and decoupling
-    generation from training lets a fresh, honestly held-out test set be produced later
-    without any risk of leaking layouts seen during training.
+REF_PX = 100          # size the reference crop is resized to before the backbone
+                       # MUST match whatever WinspPairDataset resizes the reference to
+                       # when it calls geometry.target_grid_coord() to build training targets.
+TOL_PX = 8.0
 
-    The reference image is deliberately shrunk by the KNOWN 10x factor before being
-    handed to the network, instead of asking the network to also discover the scale
-    ratio. The problem statement guarantees this ratio; wasting model capacity
-    re-deriving a known constant would only slow convergence and hurt inference speed,
-    which is explicitly part of the grading rubric.
-    """
 
-    def __init__(self, root_dir, heatmap_stride=4, heatmap_sigma=2.0):
-        # heatmap_stride: the network's output map is at 1/4 resolution of the
-        # 1000x1000 search image (see Backbone below) -- a couple of stride-2 conv
-        # layers naturally produce this. Full resolution isn't needed since sub-pixel
-        # precision is recovered separately by the offset head, not by heatmap
-        # resolution itself.
-        #
-        # heatmap_sigma: std-dev (in output-map pixels) of the Gaussian bump used as
-        # the training target. A single one-hot pixel target is too sparse to train
-        # stably (huge class imbalance, noisy gradients); a soft Gaussian target is the
-        # standard fix used by CenterNet/CornerNet-style keypoint detectors, and it also
-        # tolerates the small residual imprecision in the ground truth itself (it comes
-        # from an iterative drift-field inversion, not an exact closed form).
-        self.root = root_dir
-        with open(os.path.join(root_dir, "ground_truth.json")) as f:
-            self.records = json.load(f)
-        self.stride = heatmap_stride
-        self.sigma = heatmap_sigma
+def to_tensor(img):
+    img = img.astype(np.float32)
+    img = (img - img.mean()) / (img.std() + 1e-6)
+    return torch.from_numpy(img).unsqueeze(0).unsqueeze(0)
 
-    def __len__(self):
-        return len(self.records)
 
-    def _load_pair(self, rec):
+def find_local_maxima(hm, rel_thresh=0.85):
+    # rel_thresh raised from 0.5: the fin pitch downsamples to under 1 grid
+    # cell at this backbone's stride, so the correlation surface has
+    # periodic sidelobe ripple packed tighter than a 3x3 NMS window can
+    # suppress. A loose threshold lets thousands of ripple-noise pixels
+    # count as "candidates" (e.g. 2254 raw / 929 "distinct" on one frame),
+    # which drowns out genuine matches even after the score-based tie-break
+    # fix above. Tighten further (closer to 0.95) if candidate counts are
+    # still in the hundreds on real matches after retraining.
+    t = torch.from_numpy(hm).unsqueeze(0).unsqueeze(0)
+    pooled = F.max_pool2d(t, kernel_size=3, stride=1, padding=1)
+    keep = (t == pooled).squeeze().numpy()
+    peak_val = hm.max()
+    ys, xs = np.where(keep & (hm > rel_thresh * peak_val))
+    return [(int(y), int(x), float(hm[y, x])) for y, x in zip(ys, xs)]
+
+
+def localize(model, ref_img, search_img, device, debug=False):
+    ref_small = cv2.resize(ref_img, (REF_PX, REF_PX), interpolation=cv2.INTER_AREA)
+    ref_t = to_tensor(ref_small).to(device)
+    search_t = to_tensor(search_img).to(device)
+    with torch.no_grad():
+        heatmap, offset = model(ref_t, search_t)
+    hm = heatmap[0, 0].cpu().numpy()
+    off = offset[0].cpu().numpy()
+
+    candidates = find_local_maxima(hm)
+    h_img, w_img = search_img.shape
+    center = np.array([w_img / 2.0, h_img / 2.0])
+
+    scored = []
+    for (cy, cx, score) in candidates:
+        # Confirmed against WinspPairDataset._make_targets: channel 0 = dx
+        # (offset[0] = cx - cx_int), channel 1 = dy (offset[1] = cy - cy_int).
+        dx, dy = off[0, cy, cx], off[1, cy, cx]
+
+        # geometry.grid_coord_to_px already adds the kh//2 window-center
+        # shift and applies the correct receptive-field stride/offset for
+        # THIS specific backbone (derived from BACKBONE_LAYERS) - don't
+        # hand-roll a stride constant here, use the shared source of truth.
+        x = geometry.grid_coord_to_px(cx + dx, REF_PX)
+        y = geometry.grid_coord_to_px(cy + dy, REF_PX)
+        d = float(np.hypot(x - center[0], y - center[1]))
+        scored.append((x, y, score, d))
+
+    # Rank by SCORE first to find the genuinely best match(es). Only among
+    # candidates near-tied with the top score do we break the tie by
+    # center-distance, per spec ("if more than one matching region is found,
+    # return the one closest to the center"). Previously this sorted ALL
+    # candidates - including weak/spurious ones that merely cleared the loose
+    # rel_thresh cutoff - by center-distance first, which could hand back a
+    # noise peak just for being geographically central, regardless of how
+    # strong a match it actually was. On a noisy/ambiguous heatmap (like the
+    # periodic-fin case) that's a real difference.
+    scored.sort(key=lambda r: r[2], reverse=True)
+    top_score = scored[0][2]
+    TIE_TOLERANCE = 0.05
+    tied = [s for s in scored if s[2] >= top_score - TIE_TOLERANCE]
+    tied.sort(key=lambda r: r[3])
+    best_x, best_y, best_score, _ = tied[0]
+
+    if debug:
+        n_out_of_bounds = sum(1 for (x, y, *_r) in scored if not (0 <= x <= w_img and 0 <= y <= h_img))
+        print(f"[localize debug] n_candidates={len(scored)} n_out_of_bounds={n_out_of_bounds} "
+              f"best=({best_x:.1f},{best_y:.1f}) img=({w_img}x{h_img})")
+        if n_out_of_bounds > 0:
+            print("  -> predictions landing outside the search image is a strong signal "
+                  "of a coordinate-convention mismatch between training targets and this "
+                  "inference code (check WinspPairDataset's target-building code).")
+
+    near_ties = [s for s in scored if s[2] >= best_score - 0.05]
+    distinct_ties = []
+    for s in near_ties:
+        if all(np.hypot(s[0] - t[0], s[1] - t[1]) > 20.0 for t in distinct_ties):
+            distinct_ties.append(s)
+
+    return {
+        "x": best_x, "y": best_y, "score": best_score,
+        "n_peaks_total": len(candidates),
+        "n_distinct_ambiguous_matches": len(distinct_ties),
+        "heatmap": hm,
+    }
+
+
+def evaluate(test_dir, checkpoint, device="cuda", debug=False):
+    device = torch.device(device if torch.cuda.is_available() else "cpu")
+    model = SiamNCCLocalizer().to(device)
+    model.load_state_dict(torch.load(checkpoint, map_location=device))
+    model.eval()
+
+    with open(os.path.join(test_dir, "ground_truth.json")) as f:
+        records = json.load(f)
+
+    results = []
+    for rec in records:
         pid = rec["pair_id"]
-        ref = cv2.imread(os.path.join(self.root, "reference", f"pair_{pid:04d}_ref.png"),
-                          cv2.IMREAD_GRAYSCALE)
-        search = cv2.imread(os.path.join(self.root, "search", f"pair_{pid:04d}_search.png"),
-                             cv2.IMREAD_GRAYSCALE)
-        return ref, search
+        ref = cv2.imread(os.path.join(test_dir, "reference", f"pair_{pid:04d}_ref.png"), cv2.IMREAD_GRAYSCALE)
+        search = cv2.imread(os.path.join(test_dir, "search", f"pair_{pid:04d}_search.png"), cv2.IMREAD_GRAYSCALE)
 
-    def __getitem__(self, idx):
-        rec = self.records[idx]
-        ref, search = self._load_pair(rec)
+        t0 = time.perf_counter()
+        out = localize(model, ref, search, device, debug=debug)
+        dt = time.perf_counter() - t0
 
-        # INTER_AREA (not bilinear/bicubic) matches the physical pixel-binning that
-        # happens when a sensor captures the same scene at a coarser pixel pitch --
-        # it is the same resize mode the generator itself uses when producing the
-        # search image from its supersampled physical field, so using it here keeps
-        # the reference's simulated resolution loss consistent with the search
-        # image's actual one.
-        ref_small = cv2.resize(ref, (100, 100), interpolation=cv2.INTER_AREA)
-
-        ref_t = self._to_tensor(ref_small)
-        search_t = self._to_tensor(search)
-
-        gt_x = rec["center_x_wide_px"]
-        gt_y = rec["center_y_wide_px"]
-        heatmap, offset, offset_mask = self._make_targets(gt_x, gt_y, search.shape)
-
-        return {
-            "reference": ref_t,
-            "search": search_t,
-            "heatmap": heatmap,
-            "offset": offset,
-            "offset_mask": offset_mask,
-            "gt_x": gt_x,
-            "gt_y": gt_y,
+        err = float(np.hypot(out["x"] - rec["center_x_wide_px"], out["y"] - rec["center_y_wide_px"]))
+        results.append({
+            "pair_id": pid, "error_px": err, "time_sec": dt,
             "hard_case": rec.get("hard_case", False),
-            "pair_id": rec["pair_id"],
-        }
+            "n_distinct_ambiguous_matches": out["n_distinct_ambiguous_matches"],
+        })
 
-    def _to_tensor(self, img):
-        # Per-image standardization (zero mean, unit variance) rather than a fixed
-        # [0,1] or [0,255] scale. Reference and search images share the same
-        # underlying fin/gate reflectance but have INDEPENDENT illumination/gain
-        # fields applied during acquisition -- standardizing each image on its own
-        # statistics removes most of that nuisance gain variation before the network
-        # ever sees it, the same job a hand-built NCC pipeline would need explicit
-        # preprocessing to do.
-        img = img.astype(np.float32)
-        img = (img - img.mean()) / (img.std() + 1e-6)
-        return torch.from_numpy(img).unsqueeze(0)  # [1, H, W]
+    errs = np.array([r["error_px"] for r in results])
+    times = np.array([r["time_sec"] for r in results])
+    hard_mask = np.array([r["hard_case"] for r in results])
 
-    def _make_targets(self, gt_x, gt_y, search_shape):
-        out_h = search_shape[0] // self.stride
-        out_w = search_shape[1] // self.stride
+    summary = {
+        "n": len(results),
+        "mean_err_px": float(errs.mean()),
+        "median_err_px": float(np.median(errs)),
+        "success_at_tol_pct": float(100 * np.mean(errs <= TOL_PX)),
+        "success_normal_pct": float(100 * np.mean(errs[~hard_mask] <= TOL_PX)) if (~hard_mask).any() else None,
+        "success_hard_pct": float(100 * np.mean(errs[hard_mask] <= TOL_PX)) if hard_mask.any() else None,
+        "mean_time_ms": float(times.mean() * 1000),
+        "ambiguous_frac": float(np.mean([r["n_distinct_ambiguous_matches"] > 1 for r in results])),
+    }
+    return results, summary
 
-        cx = gt_x / self.stride
-        cy = gt_y / self.stride
-        cx_int, cy_int = int(cx), int(cy)
 
-        yy, xx = np.mgrid[0:out_h, 0:out_w]
-        heatmap = np.exp(-((xx - cx) ** 2 + (yy - cy) ** 2) / (2 * self.sigma ** 2)).astype(np.float32)
-
-        # Offset target: a residual (dx, dy) predicted ONLY at the true peak cell, to
-        # recover sub-output-stride precision lost by discretizing to the heatmap
-        # grid (stride 4 alone is ~40nm of quantization error in search-image units,
-        # far coarser than any tolerance worth reporting).
-        offset = np.zeros((2, out_h, out_w), dtype=np.float32)
-        offset_mask = np.zeros((1, out_h, out_w), dtype=np.float32)
-        if 0 <= cx_int < out_w and 0 <= cy_int < out_h:
-            offset[0, cy_int, cx_int] = cx - cx_int
-            offset[1, cy_int, cx_int] = cy - cy_int
-            offset_mask[0, cy_int, cx_int] = 1.0
-
-        return (torch.from_numpy(heatmap).unsqueeze(0),
-                torch.from_numpy(offset),
-                torch.from_numpy(offset_mask))
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--test-dir", default="data/test")
+    ap.add_argument("--checkpoint", default="driftsense_v2_best.pt")
+    ap.add_argument("--device", default="cuda")
+    ap.add_argument("--debug", action="store_true")
+    args, _ = ap.parse_known_args()
+    results, summary = evaluate(args.test_dir, args.checkpoint, args.device, debug=args.debug)
+    print(json.dumps(summary, indent=2))
