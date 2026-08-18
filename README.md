@@ -275,11 +275,13 @@ Example:
 
 This allows localization error to be measured directly:
 
-[
+$$
 \text{error} =
-\sqrt{(x_{\text{pred}} - x_{\text{gt}})^2 +
-(y_{\text{pred}} - y_{\text{gt}})^2}
-]
+\sqrt{
+(x_{\text{pred}} - x_{\text{gt}})^2 +
+(y_{\text{pred}} - y_{\text{gt}})^2
+}
+$$
 
 ## Ambiguity Handling
 
