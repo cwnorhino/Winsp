@@ -445,7 +445,7 @@ Geometry-aware coordinate mapping
         ↓
 Final inspection-site coordinate
         ↓
-              (x, y)
+      (x, y)
 ```
 
 **Objective:** recover the same physical inspection site, not merely the most visually similar repeated pattern.
