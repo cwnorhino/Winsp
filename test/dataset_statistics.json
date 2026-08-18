@@ -1,0 +1,19 @@
+{
+  "architecture": "finfet",
+  "n_pairs": 33,
+  "n_standard_pairs": 30,
+  "n_hard_pairs": 3,
+  "generation_time_sec": 28.597690499969758,
+  "avg_time_per_pair_sec": 0.8665966818172653,
+  "estimated_1000_pairs_sec": 866.5966818172653,
+  "reference_size_px": [
+    1000,
+    1000
+  ],
+  "search_size_px": [
+    1000,
+    1000
+  ],
+  "reference_nm_per_px": 1.0,
+  "search_nm_per_px": 10.0
+}

@@ -1,0 +1,2392 @@
+[
+  {
+    "pair_id": 0,
+    "architecture": "finfet",
+    "target_x_nm": 2474.5112908075225,
+    "target_y_nm": 3829.663966967785,
+    "center_x_wide_px": 247.35603637884032,
+    "center_y_wide_px": 382.8931243552887,
+    "bbox_wide_px": [
+      197.35603637884032,
+      332.8931243552887,
+      297.3560363788403,
+      432.8931243552887
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.7098176564097027,
+    "reference_scale": 0.9930009198520832,
+    "drift_amp_nm": 2.735044268058857,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.02925499239578383,
+      "detector_azimuth_rad": 4.544903364972948,
+      "psf_sigma": 0.5431543838899285,
+      "illumination_sigma": 0.006593652391790548,
+      "detector_gain_sigma": 0.0036929659923638065,
+      "correlated_noise_amp": 0.001367097067190578,
+      "charging_blobs": 0,
+      "electron_scale": 1103.751089955581,
+      "gamma_shape": 257.70485727151396,
+      "readout_sigma": 0.0017894041311996502
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.05288228611837412,
+      "detector_azimuth_rad": 1.0035610916705018,
+      "psf_sigma": 0.5909619413335518,
+      "illumination_sigma": 0.008720581473055952,
+      "detector_gain_sigma": 0.004440071256957854,
+      "correlated_noise_amp": 0.002833939949109433,
+      "charging_blobs": 0,
+      "electron_scale": 507.01591646933986,
+      "gamma_shape": 178.73779398860833,
+      "readout_sigma": 0.004074837933924957
+    },
+    "layout_parameters": {
+      "pitch_nm": 27.328222479077827,
+      "fin_frac": 0.4421433456415691,
+      "phase_nm": 22.86558777329092,
+      "edge_soft_nm": 1.6996042153588582,
+      "ler_amp_nm": 0.9315946233173891,
+      "lwr_amp_nm": 1.130967162361078,
+      "bg_val": 0.19200566191581458,
+      "fin_val": 0.7665017412674414,
+      "gate_val": 0.43359496433315364,
+      "gates": [
+        {
+          "y_nm": 3850.2134019120654,
+          "width_nm": 202.4426816631784,
+          "soft_nm": 5.059947327128527,
+          "contrast": 0.3951947389061463,
+          "bow_nm": 1.0804781464138955,
+          "bow_period_nm": 7810.496044067825
+        },
+        {
+          "y_nm": 8280.832074740814,
+          "width_nm": 195.48959845876328,
+          "soft_nm": 7.014242168423852,
+          "contrast": 0.5343254480295461,
+          "bow_nm": 0.9034698914197472,
+          "bow_period_nm": 3936.05741484046
+        }
+      ],
+      "field_seeds": [
+        1550101575,
+        1629487368
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 1,
+    "architecture": "finfet",
+    "target_x_nm": 4305.492427376574,
+    "target_y_nm": 7731.23090607168,
+    "center_x_wide_px": 430.59270620918926,
+    "center_y_wide_px": 773.2820733609217,
+    "bbox_wide_px": [
+      380.59270620918926,
+      723.2820733609217,
+      480.59270620918926,
+      823.2820733609217
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.44798170141635074,
+    "reference_scale": 1.0194053506374543,
+    "drift_amp_nm": 3.4676361469168846,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03491927891608043,
+      "detector_azimuth_rad": 4.8377204004163215,
+      "psf_sigma": 0.35388278035052984,
+      "illumination_sigma": 0.004211669917828964,
+      "detector_gain_sigma": 0.004610221725030141,
+      "correlated_noise_amp": 0.0026174427017831865,
+      "charging_blobs": 0,
+      "electron_scale": 1106.6277764723418,
+      "gamma_shape": 263.586017815741,
+      "readout_sigma": 0.001675563768160063
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.060088081894099206,
+      "detector_azimuth_rad": 0.5375737494749466,
+      "psf_sigma": 0.6702485670529605,
+      "illumination_sigma": 0.006601659577807796,
+      "detector_gain_sigma": 0.0035395983481264093,
+      "correlated_noise_amp": 0.002134421445576438,
+      "charging_blobs": 0,
+      "electron_scale": 574.9950005532983,
+      "gamma_shape": 161.9820691292173,
+      "readout_sigma": 0.0025636189332626617
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.715186346317445,
+      "fin_frac": 0.4272351329543834,
+      "phase_nm": 6.09490269876655,
+      "edge_soft_nm": 1.1269563948427197,
+      "ler_amp_nm": 1.6405155226021864,
+      "lwr_amp_nm": 0.9870405335176575,
+      "bg_val": 0.1972205426025774,
+      "fin_val": 0.8101186610153498,
+      "gate_val": 0.39542508448209274,
+      "gates": [
+        {
+          "y_nm": 7486.511835017005,
+          "width_nm": 269.26696805517406,
+          "soft_nm": 6.1913269372153525,
+          "contrast": 0.5757389453284247,
+          "bow_nm": 1.6867093112691516,
+          "bow_period_nm": 6626.17624733967
+        }
+      ],
+      "field_seeds": [
+        206016615,
+        1854746722
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 2,
+    "architecture": "finfet",
+    "target_x_nm": 3333.3146695170167,
+    "target_y_nm": 4043.105916202288,
+    "center_x_wide_px": 333.36113959524397,
+    "center_y_wide_px": 404.2995911777239,
+    "bbox_wide_px": [
+      283.36113959524397,
+      354.2995911777239,
+      383.36113959524397,
+      454.2995911777239
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.6155147556363625,
+    "reference_scale": 0.9804447281009852,
+    "drift_amp_nm": 1.5412190040936222,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.04817898050332242,
+      "detector_azimuth_rad": 2.3653088090051946,
+      "psf_sigma": 0.38516767731337087,
+      "illumination_sigma": 0.006144454294808701,
+      "detector_gain_sigma": 0.003593065214914844,
+      "correlated_noise_amp": 0.0025944200872833802,
+      "charging_blobs": 0,
+      "electron_scale": 919.788529889487,
+      "gamma_shape": 268.14096842221466,
+      "readout_sigma": 0.002169972288417324
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.049332415918009735,
+      "detector_azimuth_rad": 3.4472169444340706,
+      "psf_sigma": 0.6321641157806234,
+      "illumination_sigma": 0.013400490490894047,
+      "detector_gain_sigma": 0.003574891326200519,
+      "correlated_noise_amp": 0.002217144713678207,
+      "charging_blobs": 2,
+      "electron_scale": 726.6009617609392,
+      "gamma_shape": 253.15002950032948,
+      "readout_sigma": 0.0038187398984962737
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.40865408241801,
+      "fin_frac": 0.43369132819913536,
+      "phase_nm": 27.526053913458075,
+      "edge_soft_nm": 1.8952786230486853,
+      "ler_amp_nm": 0.9774061526436284,
+      "lwr_amp_nm": 0.42533648131039115,
+      "bg_val": 0.14545225741823528,
+      "fin_val": 0.7765207735744332,
+      "gate_val": 0.35651290674815267,
+      "gates": [
+        {
+          "y_nm": 4171.507545527831,
+          "width_nm": 254.0192640632934,
+          "soft_nm": 5.463198153869628,
+          "contrast": 0.5598537625514777,
+          "bow_nm": 0.8214180283841797,
+          "bow_period_nm": 4576.472998258244
+        },
+        {
+          "y_nm": 6562.874058543192,
+          "width_nm": 243.34286681082455,
+          "soft_nm": 5.219127118632476,
+          "contrast": 0.39562951897632237,
+          "bow_nm": 0.8457373344355859,
+          "bow_period_nm": 6648.226779430489
+        }
+      ],
+      "field_seeds": [
+        1606469758,
+        1237889824
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 3,
+    "architecture": "finfet",
+    "target_x_nm": 5084.796235615881,
+    "target_y_nm": 8901.029994257442,
+    "center_x_wide_px": 508.39456584402643,
+    "center_y_wide_px": 890.052916062688,
+    "bbox_wide_px": [
+      458.39456584402643,
+      840.052916062688,
+      558.3945658440264,
+      940.052916062688
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.20837771290634954,
+    "reference_scale": 0.9900257937226659,
+    "drift_amp_nm": 3.0852042650591467,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03719266247094058,
+      "detector_azimuth_rad": 2.552424428870197,
+      "psf_sigma": 0.4550889833385249,
+      "illumination_sigma": 0.004597431981262994,
+      "detector_gain_sigma": 0.004830719420118029,
+      "correlated_noise_amp": 0.002541307376551421,
+      "charging_blobs": 0,
+      "electron_scale": 1072.4940485002542,
+      "gamma_shape": 373.73036665980794,
+      "readout_sigma": 0.0018061142827584449
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.04346247915693804,
+      "detector_azimuth_rad": 3.523426584071653,
+      "psf_sigma": 0.6702422382856151,
+      "illumination_sigma": 0.013862665002863251,
+      "detector_gain_sigma": 0.0059786576395064635,
+      "correlated_noise_amp": 0.0035927011564544442,
+      "charging_blobs": 1,
+      "electron_scale": 718.130786161586,
+      "gamma_shape": 245.60205775740224,
+      "readout_sigma": 0.0032090834214534803
+    },
+    "layout_parameters": {
+      "pitch_nm": 33.25914353580098,
+      "fin_frac": 0.43113443616166797,
+      "phase_nm": 8.61707900434458,
+      "edge_soft_nm": 1.0463524852327126,
+      "ler_amp_nm": 0.9650605789415073,
+      "lwr_amp_nm": 0.8512701574123979,
+      "bg_val": 0.15499921832572186,
+      "fin_val": 0.8004005568289222,
+      "gate_val": 0.3412215669876413,
+      "gates": [
+        {
+          "y_nm": 8704.277599368284,
+          "width_nm": 222.4508730957374,
+          "soft_nm": 7.677591933934144,
+          "contrast": 0.46346926066813876,
+          "bow_nm": 1.205365555443122,
+          "bow_period_nm": 3637.685142398984
+        }
+      ],
+      "field_seeds": [
+        1578961851,
+        276963405
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 4,
+    "architecture": "finfet",
+    "target_x_nm": 6880.617708941004,
+    "target_y_nm": 8621.693822296113,
+    "center_x_wide_px": 688.1545830984613,
+    "center_y_wide_px": 862.1773560294657,
+    "bbox_wide_px": [
+      638.1545830984613,
+      812.1773560294657,
+      738.1545830984613,
+      912.1773560294657
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.2810719632348744,
+    "reference_scale": 0.9870514271759614,
+    "drift_amp_nm": 2.0532580105194684,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.04335199070641508,
+      "detector_azimuth_rad": 5.957088513377365,
+      "psf_sigma": 0.45633769975117694,
+      "illumination_sigma": 0.006565255468612957,
+      "detector_gain_sigma": 0.0029547746026915814,
+      "correlated_noise_amp": 0.0021706132967447694,
+      "charging_blobs": 0,
+      "electron_scale": 833.4213383131147,
+      "gamma_shape": 359.0246115197874,
+      "readout_sigma": 0.0021028230220955764
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.05126089824405129,
+      "detector_azimuth_rad": 2.6151702133981947,
+      "psf_sigma": 0.6342459398069121,
+      "illumination_sigma": 0.013506213425373448,
+      "detector_gain_sigma": 0.00430101676786595,
+      "correlated_noise_amp": 0.0048702538645379045,
+      "charging_blobs": 0,
+      "electron_scale": 732.1964390917485,
+      "gamma_shape": 150.67747480153218,
+      "readout_sigma": 0.0033044802156245784
+    },
+    "layout_parameters": {
+      "pitch_nm": 32.0945641956224,
+      "fin_frac": 0.4268974495641513,
+      "phase_nm": 11.607573462896491,
+      "edge_soft_nm": 1.6953211826203574,
+      "ler_amp_nm": 1.4167640659457024,
+      "lwr_amp_nm": 0.5393718569215978,
+      "bg_val": 0.1538530877125055,
+      "fin_val": 0.7834265716295936,
+      "gate_val": 0.34908481695401994,
+      "gates": [
+        {
+          "y_nm": 8838.694360175687,
+          "width_nm": 279.384245650554,
+          "soft_nm": 5.669049289573181,
+          "contrast": 0.5584840387668228,
+          "bow_nm": 1.0708443788863835,
+          "bow_period_nm": 7498.7569101059
+        }
+      ],
+      "field_seeds": [
+        901464909,
+        1818571672
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 5,
+    "architecture": "finfet",
+    "target_x_nm": 4810.959952881146,
+    "target_y_nm": 1160.569405928824,
+    "center_x_wide_px": 481.0703835596848,
+    "center_y_wide_px": 116.11671798383927,
+    "bbox_wide_px": [
+      431.0703835596848,
+      66.11671798383927,
+      531.0703835596848,
+      166.11671798383927
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.5663231412880005,
+    "reference_scale": 0.9858371977239856,
+    "drift_amp_nm": 2.0611066546983583,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.046154956582222476,
+      "detector_azimuth_rad": 3.6314567262976074,
+      "psf_sigma": 0.3816400906930495,
+      "illumination_sigma": 0.0061617209164054575,
+      "detector_gain_sigma": 0.0032987173058757354,
+      "correlated_noise_amp": 0.002747353608043817,
+      "charging_blobs": 0,
+      "electron_scale": 983.7131601134399,
+      "gamma_shape": 238.81593819916006,
+      "readout_sigma": 0.0018885119420048598
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.0654402311607031,
+      "detector_azimuth_rad": 4.447668212250771,
+      "psf_sigma": 0.6566136898496453,
+      "illumination_sigma": 0.013016793193074503,
+      "detector_gain_sigma": 0.0056238764125938895,
+      "correlated_noise_amp": 0.004773201084555322,
+      "charging_blobs": 0,
+      "electron_scale": 672.8799842884433,
+      "gamma_shape": 188.41207384677602,
+      "readout_sigma": 0.0035148817436775354
+    },
+    "layout_parameters": {
+      "pitch_nm": 31.99167055016452,
+      "fin_frac": 0.4544739636566182,
+      "phase_nm": 20.30500178445326,
+      "edge_soft_nm": 1.5623584695377482,
+      "ler_amp_nm": 0.5024039350000313,
+      "lwr_amp_nm": 0.9530755761351947,
+      "bg_val": 0.17914029758620614,
+      "fin_val": 0.7471904941131291,
+      "gate_val": 0.4237125232390929,
+      "gates": [
+        {
+          "y_nm": 1123.9807665781116,
+          "width_nm": 263.22405274222575,
+          "soft_nm": 8.880641833009888,
+          "contrast": 0.5045435768131832,
+          "bow_nm": 0.4720117337936858,
+          "bow_period_nm": 8036.508954253322
+        }
+      ],
+      "field_seeds": [
+        853623623,
+        1706052420
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 6,
+    "architecture": "finfet",
+    "target_x_nm": 643.9483946025734,
+    "target_y_nm": 6630.8889616708475,
+    "center_x_wide_px": 64.4138615793026,
+    "center_y_wide_px": 663.0946699527951,
+    "bbox_wide_px": [
+      14.413861579302605,
+      613.0946699527951,
+      114.4138615793026,
+      713.0946699527951
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.4801801165364854,
+    "reference_scale": 1.0145194025297086,
+    "drift_amp_nm": 2.9606768983092593,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.05083765848064166,
+      "detector_azimuth_rad": 4.6914644386395645,
+      "psf_sigma": 0.4876034638805375,
+      "illumination_sigma": 0.008445108345465885,
+      "detector_gain_sigma": 0.002679557832186051,
+      "correlated_noise_amp": 0.001151576816736724,
+      "charging_blobs": 0,
+      "electron_scale": 849.5629988313111,
+      "gamma_shape": 320.7041906441565,
+      "readout_sigma": 0.0029578123912861022
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.053305532638876024,
+      "detector_azimuth_rad": 1.0544114251843753,
+      "psf_sigma": 0.7288628786930621,
+      "illumination_sigma": 0.007995373583349836,
+      "detector_gain_sigma": 0.005290629019471261,
+      "correlated_noise_amp": 0.0037095363813522725,
+      "charging_blobs": 2,
+      "electron_scale": 643.9544229997622,
+      "gamma_shape": 135.80417280540578,
+      "readout_sigma": 0.004352979151764986
+    },
+    "layout_parameters": {
+      "pitch_nm": 35.644921938735216,
+      "fin_frac": 0.5018493135117914,
+      "phase_nm": 13.070789388759067,
+      "edge_soft_nm": 1.550170834487591,
+      "ler_amp_nm": 0.7950510483344209,
+      "lwr_amp_nm": 0.5947876399539997,
+      "bg_val": 0.19756205043893318,
+      "fin_val": 0.7273009825159384,
+      "gate_val": 0.43983808685059356,
+      "gates": [
+        {
+          "y_nm": 6895.723114436826,
+          "width_nm": 200.11320314190766,
+          "soft_nm": 8.286427992633424,
+          "contrast": 0.5058980684651977,
+          "bow_nm": 1.7600862978777267,
+          "bow_period_nm": 4149.352893839021
+        }
+      ],
+      "field_seeds": [
+        887785169,
+        1682836485
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 7,
+    "architecture": "finfet",
+    "target_x_nm": 3776.988399474811,
+    "target_y_nm": 8566.883587310504,
+    "center_x_wide_px": 377.7739475577068,
+    "center_y_wide_px": 856.6270517895412,
+    "bbox_wide_px": [
+      327.7739475577068,
+      806.6270517895412,
+      427.7739475577068,
+      906.6270517895412
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.538552200092465,
+    "reference_scale": 0.9810977573911313,
+    "drift_amp_nm": 2.321420370925326,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.0377187799605591,
+      "detector_azimuth_rad": 5.470871615246573,
+      "psf_sigma": 0.4782010104910444,
+      "illumination_sigma": 0.007387861654585529,
+      "detector_gain_sigma": 0.00498029694898529,
+      "correlated_noise_amp": 0.001327421317041552,
+      "charging_blobs": 0,
+      "electron_scale": 1187.0746785939,
+      "gamma_shape": 356.1994583851663,
+      "readout_sigma": 0.0029956743110368723
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.0645465230325998,
+      "detector_azimuth_rad": 3.3506590622153274,
+      "psf_sigma": 0.47942722422348305,
+      "illumination_sigma": 0.006162718125747087,
+      "detector_gain_sigma": 0.005968988003954491,
+      "correlated_noise_amp": 0.004258928582722926,
+      "charging_blobs": 1,
+      "electron_scale": 640.4135119380629,
+      "gamma_shape": 131.53119404491466,
+      "readout_sigma": 0.0023140105347280566
+    },
+    "layout_parameters": {
+      "pitch_nm": 30.502511356861234,
+      "fin_frac": 0.4359220073320031,
+      "phase_nm": 16.76800662023786,
+      "edge_soft_nm": 1.120579739473062,
+      "ler_amp_nm": 1.0480145716914975,
+      "lwr_amp_nm": 1.1090204737856262,
+      "bg_val": 0.17850119335074313,
+      "fin_val": 0.6887686765252041,
+      "gate_val": 0.34838395174352277,
+      "gates": [
+        {
+          "y_nm": 8304.852078017715,
+          "width_nm": 233.82663176031605,
+          "soft_nm": 5.627253004393374,
+          "contrast": 0.4305456523024138,
+          "bow_nm": 0.2553225744576668,
+          "bow_period_nm": 3525.5702571763363
+        }
+      ],
+      "field_seeds": [
+        1236866602,
+        684554609
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 8,
+    "architecture": "finfet",
+    "target_x_nm": 7819.4805281979025,
+    "target_y_nm": 1058.8447610606077,
+    "center_x_wide_px": 781.9567399903851,
+    "center_y_wide_px": 105.91315677036168,
+    "bbox_wide_px": [
+      731.9567399903851,
+      55.91315677036168,
+      831.9567399903851,
+      155.9131567703617
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.0346330103785806,
+    "reference_scale": 1.0066525591302373,
+    "drift_amp_nm": 1.4707719267870534,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.0491502375757424,
+      "detector_azimuth_rad": 0.471663595431241,
+      "psf_sigma": 0.3609404127620511,
+      "illumination_sigma": 0.00691090243861244,
+      "detector_gain_sigma": 0.004405667164784444,
+      "correlated_noise_amp": 0.0010428845554857702,
+      "charging_blobs": 0,
+      "electron_scale": 847.6126682664652,
+      "gamma_shape": 228.7666686957244,
+      "readout_sigma": 0.002477157367570484
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06898521764785923,
+      "detector_azimuth_rad": 3.8920490616666843,
+      "psf_sigma": 0.6420287395211082,
+      "illumination_sigma": 0.007888994820670504,
+      "detector_gain_sigma": 0.004396193851285819,
+      "correlated_noise_amp": 0.0030353339294197515,
+      "charging_blobs": 0,
+      "electron_scale": 516.0359955900648,
+      "gamma_shape": 158.77438458207908,
+      "readout_sigma": 0.0028497850241614416
+    },
+    "layout_parameters": {
+      "pitch_nm": 29.56616947303996,
+      "fin_frac": 0.42799309614373937,
+      "phase_nm": 5.669785242684023,
+      "edge_soft_nm": 1.977036647023318,
+      "ler_amp_nm": 0.9592368776084368,
+      "lwr_amp_nm": 0.8658880933931459,
+      "bg_val": 0.14305280868352255,
+      "fin_val": 0.7017240443757918,
+      "gate_val": 0.4499708208819493,
+      "gates": [
+        {
+          "y_nm": 1326.5012280547628,
+          "width_nm": 282.04110855089846,
+          "soft_nm": 6.306122844690016,
+          "contrast": 0.418365738255748,
+          "bow_nm": 1.8864725117387826,
+          "bow_period_nm": 5386.497547735777
+        }
+      ],
+      "field_seeds": [
+        710313492,
+        235343996
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 9,
+    "architecture": "finfet",
+    "target_x_nm": 2470.010037723986,
+    "target_y_nm": 4500.142302165622,
+    "center_x_wide_px": 247.0638923469988,
+    "center_y_wide_px": 449.8833454499835,
+    "bbox_wide_px": [
+      197.0638923469988,
+      399.8833454499835,
+      297.06389234699884,
+      499.8833454499835
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.9036800629315522,
+    "reference_scale": 1.0108894913582274,
+    "drift_amp_nm": 2.9365536167865214,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03584747222306463,
+      "detector_azimuth_rad": 1.8428109476073065,
+      "psf_sigma": 0.4962225693348762,
+      "illumination_sigma": 0.006789187245203239,
+      "detector_gain_sigma": 0.003958147706342433,
+      "correlated_noise_amp": 0.0028089923104872186,
+      "charging_blobs": 0,
+      "electron_scale": 1103.6629059871048,
+      "gamma_shape": 257.2271138476696,
+      "readout_sigma": 0.002311100805669232
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.046900648226651034,
+      "detector_azimuth_rad": 2.303857226602858,
+      "psf_sigma": 0.5488872586834806,
+      "illumination_sigma": 0.006092430213966824,
+      "detector_gain_sigma": 0.006909917048111026,
+      "correlated_noise_amp": 0.0023664952252123346,
+      "charging_blobs": 0,
+      "electron_scale": 539.5345083341833,
+      "gamma_shape": 136.28834093364358,
+      "readout_sigma": 0.004946116457969609
+    },
+    "layout_parameters": {
+      "pitch_nm": 33.3126515804013,
+      "fin_frac": 0.4684584233132327,
+      "phase_nm": 4.991952598764654,
+      "edge_soft_nm": 1.5860485384053509,
+      "ler_amp_nm": 1.2683833314539221,
+      "lwr_amp_nm": 0.845184332507555,
+      "bg_val": 0.15400859305901102,
+      "fin_val": 0.7173498764754394,
+      "gate_val": 0.42357858417430244,
+      "gates": [
+        {
+          "y_nm": 4544.276843253086,
+          "width_nm": 243.36162584656248,
+          "soft_nm": 7.177291096764141,
+          "contrast": 0.5585487976252248,
+          "bow_nm": 0.680810348483176,
+          "bow_period_nm": 7303.0919753955495
+        }
+      ],
+      "field_seeds": [
+        858321203,
+        138011133
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 10,
+    "architecture": "finfet",
+    "target_x_nm": 1879.1038159075358,
+    "target_y_nm": 8287.001770799145,
+    "center_x_wide_px": 187.9785805160103,
+    "center_y_wide_px": 828.7156433005914,
+    "bbox_wide_px": [
+      137.9785805160103,
+      778.7156433005914,
+      237.9785805160103,
+      878.7156433005914
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.01169414279489267,
+    "reference_scale": 0.9956751521694606,
+    "drift_amp_nm": 2.6743835030669363,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03562862962841806,
+      "detector_azimuth_rad": 0.5633665437596496,
+      "psf_sigma": 0.36286049509980994,
+      "illumination_sigma": 0.006187583719946457,
+      "detector_gain_sigma": 0.002015957262538288,
+      "correlated_noise_amp": 0.0011622450635685206,
+      "charging_blobs": 0,
+      "electron_scale": 899.1729952831469,
+      "gamma_shape": 387.67113920432615,
+      "readout_sigma": 0.0015305142874352336
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.05857239126777032,
+      "detector_azimuth_rad": 1.0966122233797346,
+      "psf_sigma": 0.6648983136006186,
+      "illumination_sigma": 0.01334867045468969,
+      "detector_gain_sigma": 0.00424787708200131,
+      "correlated_noise_amp": 0.003733690284837174,
+      "charging_blobs": 0,
+      "electron_scale": 711.6768606441192,
+      "gamma_shape": 237.69408879973832,
+      "readout_sigma": 0.004227303729566341
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.002126488480393,
+      "fin_frac": 0.4385243422067908,
+      "phase_nm": 10.294905198244567,
+      "edge_soft_nm": 1.1156470125281368,
+      "ler_amp_nm": 1.3867258404066334,
+      "lwr_amp_nm": 0.5141103799124992,
+      "bg_val": 0.1897203677024475,
+      "fin_val": 0.7043592222942133,
+      "gate_val": 0.437086981068963,
+      "gates": [
+        {
+          "y_nm": 4678.463649483823,
+          "width_nm": 194.46283291806327,
+          "soft_nm": 7.070100123151237,
+          "contrast": 0.4103118994694494,
+          "bow_nm": 0.27092085831479484,
+          "bow_period_nm": 5428.817799666526
+        }
+      ],
+      "field_seeds": [
+        1213016354,
+        1233408577
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 11,
+    "architecture": "finfet",
+    "target_x_nm": 8069.74148480385,
+    "target_y_nm": 4228.835979112411,
+    "center_x_wide_px": 806.9687871811682,
+    "center_y_wide_px": 422.81557551706084,
+    "bbox_wide_px": [
+      756.9687871811682,
+      372.81557551706084,
+      856.9687871811682,
+      472.81557551706084
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.169006233736103,
+    "reference_scale": 1.0147745155791752,
+    "drift_amp_nm": 1.5077193350652875,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.02505013097114362,
+      "detector_azimuth_rad": 4.978417953708375,
+      "psf_sigma": 0.336921747863831,
+      "illumination_sigma": 0.009001921243685557,
+      "detector_gain_sigma": 0.003254068387574357,
+      "correlated_noise_amp": 0.002871033682645425,
+      "charging_blobs": 0,
+      "electron_scale": 1129.6731388407661,
+      "gamma_shape": 367.823999744852,
+      "readout_sigma": 0.0013726481013636082
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06733633645291565,
+      "detector_azimuth_rad": 4.689630639033407,
+      "psf_sigma": 0.5591212770583186,
+      "illumination_sigma": 0.010761341289165935,
+      "detector_gain_sigma": 0.004404720368919835,
+      "correlated_noise_amp": 0.0033849578586142314,
+      "charging_blobs": 0,
+      "electron_scale": 520.3992725488976,
+      "gamma_shape": 253.21640639771869,
+      "readout_sigma": 0.0020733163646125003
+    },
+    "layout_parameters": {
+      "pitch_nm": 27.477544989031845,
+      "fin_frac": 0.4200607668514643,
+      "phase_nm": 23.77699494340923,
+      "edge_soft_nm": 1.2406357180634429,
+      "ler_amp_nm": 1.3527584895280889,
+      "lwr_amp_nm": 0.4905316409981032,
+      "bg_val": 0.18821417176025998,
+      "fin_val": 0.8075301030948224,
+      "gate_val": 0.4284599844380387,
+      "gates": [
+        {
+          "y_nm": 1745.583664253025,
+          "width_nm": 239.80859676432712,
+          "soft_nm": 8.055768173159786,
+          "contrast": 0.5174948674681858,
+          "bow_nm": 1.1863749607713816,
+          "bow_period_nm": 4535.17228241477
+        },
+        {
+          "y_nm": 5426.522178105645,
+          "width_nm": 203.02582755034703,
+          "soft_nm": 7.414936418327555,
+          "contrast": 0.5639297368657026,
+          "bow_nm": 0.016871144992907983,
+          "bow_period_nm": 8052.213961487962
+        }
+      ],
+      "field_seeds": [
+        580754439,
+        806397234
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 12,
+    "architecture": "finfet",
+    "target_x_nm": 657.6828102085955,
+    "target_y_nm": 6733.06565765911,
+    "center_x_wide_px": 65.81748665783769,
+    "center_y_wide_px": 673.2964282705125,
+    "bbox_wide_px": [
+      15.81748665783769,
+      623.2964282705125,
+      115.81748665783769,
+      723.2964282705125
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.3523315587675375,
+    "reference_scale": 1.0131349799609872,
+    "drift_amp_nm": 2.826948183497414,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.04564761166848618,
+      "detector_azimuth_rad": 5.515899449607274,
+      "psf_sigma": 0.41422460429198066,
+      "illumination_sigma": 0.005789030326771337,
+      "detector_gain_sigma": 0.003852579679969933,
+      "correlated_noise_amp": 0.0010663123930211937,
+      "charging_blobs": 0,
+      "electron_scale": 1094.845077693259,
+      "gamma_shape": 416.9354167523917,
+      "readout_sigma": 0.0016463494714416753
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.05709410585904593,
+      "detector_azimuth_rad": 4.131411711174634,
+      "psf_sigma": 0.6404996379203387,
+      "illumination_sigma": 0.00798164227617528,
+      "detector_gain_sigma": 0.005286292719083592,
+      "correlated_noise_amp": 0.0046755393967878225,
+      "charging_blobs": 1,
+      "electron_scale": 584.042126746881,
+      "gamma_shape": 219.3367203258827,
+      "readout_sigma": 0.0049731197907468515
+    },
+    "layout_parameters": {
+      "pitch_nm": 36.091739316157614,
+      "fin_frac": 0.5149179513852212,
+      "phase_nm": 5.431692697021147,
+      "edge_soft_nm": 1.2985051472699383,
+      "ler_amp_nm": 1.6049209386749002,
+      "lwr_amp_nm": 1.0389218438901437,
+      "bg_val": 0.18525468120416794,
+      "fin_val": 0.7642491581234215,
+      "gate_val": 0.3505469645975404,
+      "gates": [
+        {
+          "y_nm": 6863.0987856598595,
+          "width_nm": 289.2215700993188,
+          "soft_nm": 8.224465603670199,
+          "contrast": 0.4940386867336802,
+          "bow_nm": 1.330456082440552,
+          "bow_period_nm": 7397.965232726539
+        },
+        {
+          "y_nm": 8783.692126587477,
+          "width_nm": 289.2810951491193,
+          "soft_nm": 7.4824502152799255,
+          "contrast": 0.5520491242779261,
+          "bow_nm": 1.836893661617481,
+          "bow_period_nm": 6282.111513373346
+        }
+      ],
+      "field_seeds": [
+        1869404867,
+        110311575
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 13,
+    "architecture": "finfet",
+    "target_x_nm": 2036.611647488217,
+    "target_y_nm": 1917.3538920468718,
+    "center_x_wide_px": 203.72077013269467,
+    "center_y_wide_px": 191.57184146232038,
+    "bbox_wide_px": [
+      153.72077013269467,
+      141.57184146232038,
+      253.72077013269467,
+      241.57184146232038
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.1700158468099833,
+    "reference_scale": 1.008476311148799,
+    "drift_amp_nm": 3.2145853913329607,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.0284336202092085,
+      "detector_azimuth_rad": 2.8318210152228986,
+      "psf_sigma": 0.4932859924684221,
+      "illumination_sigma": 0.009195327688738396,
+      "detector_gain_sigma": 0.003858841137172048,
+      "correlated_noise_amp": 0.0024120737825996308,
+      "charging_blobs": 0,
+      "electron_scale": 882.0582159724177,
+      "gamma_shape": 280.6363448642324,
+      "readout_sigma": 0.0025512664250148566
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.04852513686802724,
+      "detector_azimuth_rad": 4.7673644980450565,
+      "psf_sigma": 0.6834464539937741,
+      "illumination_sigma": 0.013971876244003473,
+      "detector_gain_sigma": 0.005918017688848325,
+      "correlated_noise_amp": 0.004852405723494171,
+      "charging_blobs": 2,
+      "electron_scale": 504.595657032822,
+      "gamma_shape": 183.33627407618957,
+      "readout_sigma": 0.004633603604637422
+    },
+    "layout_parameters": {
+      "pitch_nm": 31.096370961714822,
+      "fin_frac": 0.46450150777660576,
+      "phase_nm": 14.753418619484616,
+      "edge_soft_nm": 1.3352032322223915,
+      "ler_amp_nm": 0.7367480831402995,
+      "lwr_amp_nm": 0.9028450511012596,
+      "bg_val": 0.1844517299599849,
+      "fin_val": 0.7243018960211138,
+      "gate_val": 0.4372522209600812,
+      "gates": [
+        {
+          "y_nm": 4539.087523674221,
+          "width_nm": 241.27299491342836,
+          "soft_nm": 5.8303392923496,
+          "contrast": 0.40316676985083727,
+          "bow_nm": 0.6919590951412053,
+          "bow_period_nm": 5200.009776876304
+        },
+        {
+          "y_nm": 8093.8078730368625,
+          "width_nm": 226.0058159311083,
+          "soft_nm": 5.946562884983399,
+          "contrast": 0.4346525564100711,
+          "bow_nm": 1.4667668528950182,
+          "bow_period_nm": 4739.3017198855405
+        }
+      ],
+      "field_seeds": [
+        937050846,
+        1994257142
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 14,
+    "architecture": "finfet",
+    "target_x_nm": 1131.4819011518557,
+    "target_y_nm": 2268.9396770722824,
+    "center_x_wide_px": 113.09480366537173,
+    "center_y_wide_px": 226.93668517894702,
+    "bbox_wide_px": [
+      63.09480366537173,
+      176.93668517894702,
+      163.09480366537173,
+      276.936685178947
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.26618260412314854,
+    "reference_scale": 0.9945463818623619,
+    "drift_amp_nm": 2.6377739590928497,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.028705974395228803,
+      "detector_azimuth_rad": 3.1010122511935494,
+      "psf_sigma": 0.319470983829712,
+      "illumination_sigma": 0.005287739232617267,
+      "detector_gain_sigma": 0.0030800675218561153,
+      "correlated_noise_amp": 0.0023582516993287516,
+      "charging_blobs": 0,
+      "electron_scale": 1199.8773243756577,
+      "gamma_shape": 284.40415345610444,
+      "readout_sigma": 0.002683676663584287
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.055571311863984826,
+      "detector_azimuth_rad": 1.8202472024183158,
+      "psf_sigma": 0.4984807285980934,
+      "illumination_sigma": 0.00890829521979375,
+      "detector_gain_sigma": 0.00552195213808224,
+      "correlated_noise_amp": 0.0036719186970957923,
+      "charging_blobs": 0,
+      "electron_scale": 515.2339608054436,
+      "gamma_shape": 177.27406195017494,
+      "readout_sigma": 0.003382716558399189
+    },
+    "layout_parameters": {
+      "pitch_nm": 31.89983580749756,
+      "fin_frac": 0.4466030759628821,
+      "phase_nm": 10.743425395551244,
+      "edge_soft_nm": 1.6440817890833648,
+      "ler_amp_nm": 0.6060133310903375,
+      "lwr_amp_nm": 0.8802340001903127,
+      "bg_val": 0.1595069963478437,
+      "fin_val": 0.7214598893778995,
+      "gate_val": 0.3736638487515448,
+      "gates": [
+        {
+          "y_nm": 2340.6116958047032,
+          "width_nm": 208.80696329109432,
+          "soft_nm": 6.8651954284628305,
+          "contrast": 0.5262263761656324,
+          "bow_nm": 1.2997292371126883,
+          "bow_period_nm": 4886.3457086523185
+        }
+      ],
+      "field_seeds": [
+        627572044,
+        1466391798
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 15,
+    "architecture": "finfet",
+    "target_x_nm": 1932.9748432478643,
+    "target_y_nm": 3823.6389118714455,
+    "center_x_wide_px": 193.29718381977415,
+    "center_y_wide_px": 382.33006806953074,
+    "bbox_wide_px": [
+      143.29718381977415,
+      332.33006806953074,
+      243.29718381977415,
+      432.33006806953074
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.5536448048838576,
+    "reference_scale": 0.9890699535402468,
+    "drift_amp_nm": 2.2988451775610983,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.027839121007074016,
+      "detector_azimuth_rad": 0.0682181337875016,
+      "psf_sigma": 0.36616111508060256,
+      "illumination_sigma": 0.006055415595307946,
+      "detector_gain_sigma": 0.0044316881740973195,
+      "correlated_noise_amp": 0.002833218551139379,
+      "charging_blobs": 0,
+      "electron_scale": 1176.2828616261766,
+      "gamma_shape": 316.3619301789559,
+      "readout_sigma": 0.0015100108405650186
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06246387645498483,
+      "detector_azimuth_rad": 4.942138978798944,
+      "psf_sigma": 0.6583605246918216,
+      "illumination_sigma": 0.01216576210523711,
+      "detector_gain_sigma": 0.005420957011053538,
+      "correlated_noise_amp": 0.0020045253234576396,
+      "charging_blobs": 0,
+      "electron_scale": 724.4356083326874,
+      "gamma_shape": 251.10702234695847,
+      "readout_sigma": 0.002943800263515145
+    },
+    "layout_parameters": {
+      "pitch_nm": 34.172922222235655,
+      "fin_frac": 0.430661104662936,
+      "phase_nm": 22.105752587252177,
+      "edge_soft_nm": 1.1995980708925942,
+      "ler_amp_nm": 0.6653632003380157,
+      "lwr_amp_nm": 1.1962987455413407,
+      "bg_val": 0.14201905726995132,
+      "fin_val": 0.7147145480993271,
+      "gate_val": 0.37615607273403745,
+      "gates": [
+        {
+          "y_nm": 3553.409927857725,
+          "width_nm": 259.3140724031988,
+          "soft_nm": 8.129861386067837,
+          "contrast": 0.5305512769247414,
+          "bow_nm": 0.28076944350975364,
+          "bow_period_nm": 6354.550353538922
+        }
+      ],
+      "field_seeds": [
+        389707336,
+        1729998169
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 16,
+    "architecture": "finfet",
+    "target_x_nm": 9177.181902645258,
+    "target_y_nm": 1690.6824774916115,
+    "center_x_wide_px": 917.7390264509347,
+    "center_y_wide_px": 169.10613159115258,
+    "bbox_wide_px": [
+      867.7390264509347,
+      119.10613159115258,
+      967.7390264509347,
+      219.10613159115258
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.09938245181585392,
+    "reference_scale": 1.0069859606333278,
+    "drift_amp_nm": 1.4082023669635717,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.05353453070270938,
+      "detector_azimuth_rad": 2.1806544550545612,
+      "psf_sigma": 0.373073196172656,
+      "illumination_sigma": 0.005587295463802029,
+      "detector_gain_sigma": 0.0043780167842181646,
+      "correlated_noise_amp": 0.002928127998722325,
+      "charging_blobs": 0,
+      "electron_scale": 806.171942742251,
+      "gamma_shape": 254.26966424290634,
+      "readout_sigma": 0.0021713924074545834
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.04150911400963612,
+      "detector_azimuth_rad": 3.7711114696345294,
+      "psf_sigma": 0.7710339202036527,
+      "illumination_sigma": 0.0134016332816645,
+      "detector_gain_sigma": 0.007595518615731869,
+      "correlated_noise_amp": 0.0034910238691083176,
+      "charging_blobs": 1,
+      "electron_scale": 650.9618486380384,
+      "gamma_shape": 211.96964525176682,
+      "readout_sigma": 0.002350647385579685
+    },
+    "layout_parameters": {
+      "pitch_nm": 32.65501672682641,
+      "fin_frac": 0.4474791943610877,
+      "phase_nm": 29.790201268178432,
+      "edge_soft_nm": 1.9187272173880414,
+      "ler_amp_nm": 1.0513323505868688,
+      "lwr_amp_nm": 0.5805340114925224,
+      "bg_val": 0.1492000883000731,
+      "fin_val": 0.6868668076815809,
+      "gate_val": 0.37569286137437896,
+      "gates": [
+        {
+          "y_nm": 1939.7837678782914,
+          "width_nm": 234.05853034246377,
+          "soft_nm": 8.801086401097256,
+          "contrast": 0.39646941910785005,
+          "bow_nm": 0.9495187004144829,
+          "bow_period_nm": 5617.0879463562305
+        }
+      ],
+      "field_seeds": [
+        1037552256,
+        855096995
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 17,
+    "architecture": "finfet",
+    "target_x_nm": 4971.8361743384185,
+    "target_y_nm": 6280.666867223715,
+    "center_x_wide_px": 497.10538383417907,
+    "center_y_wide_px": 628.1375163880323,
+    "bbox_wide_px": [
+      447.10538383417907,
+      578.1375163880323,
+      547.1053838341791,
+      678.1375163880323
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.5999754056112319,
+    "reference_scale": 0.9861448991969413,
+    "drift_amp_nm": 2.886450436552121,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.047232780287985596,
+      "detector_azimuth_rad": 5.870565161667343,
+      "psf_sigma": 0.39832435508647474,
+      "illumination_sigma": 0.0046031855053961495,
+      "detector_gain_sigma": 0.0036735692327576532,
+      "correlated_noise_amp": 0.002692879412630758,
+      "charging_blobs": 0,
+      "electron_scale": 1105.2058652800952,
+      "gamma_shape": 396.219051344373,
+      "readout_sigma": 0.00272311469533753
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.052293741459393285,
+      "detector_azimuth_rad": 5.020482254790458,
+      "psf_sigma": 0.6384600453590742,
+      "illumination_sigma": 0.013847518050855037,
+      "detector_gain_sigma": 0.003985654083189394,
+      "correlated_noise_amp": 0.0029071398167346703,
+      "charging_blobs": 0,
+      "electron_scale": 507.8156450243253,
+      "gamma_shape": 204.19644903574033,
+      "readout_sigma": 0.0029825622910754452
+    },
+    "layout_parameters": {
+      "pitch_nm": 36.51550850364953,
+      "fin_frac": 0.4454300219646478,
+      "phase_nm": 16.511043993336074,
+      "edge_soft_nm": 1.9422406318010594,
+      "ler_amp_nm": 1.003649732314826,
+      "lwr_amp_nm": 0.5950917639718382,
+      "bg_val": 0.16164624796939803,
+      "fin_val": 0.7013241672646067,
+      "gate_val": 0.42203357827377574,
+      "gates": [
+        {
+          "y_nm": 6018.458824349362,
+          "width_nm": 245.1417656472294,
+          "soft_nm": 7.411272754945782,
+          "contrast": 0.49838344094284015,
+          "bow_nm": 1.3199900189393048,
+          "bow_period_nm": 7505.133216973396
+        }
+      ],
+      "field_seeds": [
+        718848325,
+        267074379
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 18,
+    "architecture": "finfet",
+    "target_x_nm": 6262.892980600923,
+    "target_y_nm": 5484.134907825301,
+    "center_x_wide_px": 626.2845758340537,
+    "center_y_wide_px": 548.4947453661273,
+    "bbox_wide_px": [
+      576.2845758340537,
+      498.4947453661273,
+      676.2845758340537,
+      598.4947453661273
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.6748984232965376,
+    "reference_scale": 1.005920120054668,
+    "drift_amp_nm": 3.1732107109748453,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03513197585073581,
+      "detector_azimuth_rad": 2.7575451745731345,
+      "psf_sigma": 0.3643883287395756,
+      "illumination_sigma": 0.007398998375592918,
+      "detector_gain_sigma": 0.004379288204678439,
+      "correlated_noise_amp": 0.002823526757599437,
+      "charging_blobs": 0,
+      "electron_scale": 1167.9154716278356,
+      "gamma_shape": 361.7657380508976,
+      "readout_sigma": 0.0022299664627811527
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06363997840725699,
+      "detector_azimuth_rad": 2.3875664521168884,
+      "psf_sigma": 0.726392083284437,
+      "illumination_sigma": 0.010210100378836424,
+      "detector_gain_sigma": 0.005927899940614055,
+      "correlated_noise_amp": 0.004432674966692456,
+      "charging_blobs": 0,
+      "electron_scale": 699.294519240487,
+      "gamma_shape": 186.94388927323274,
+      "readout_sigma": 0.004286992629942669
+    },
+    "layout_parameters": {
+      "pitch_nm": 34.25549784594683,
+      "fin_frac": 0.4832339060258766,
+      "phase_nm": 32.341505573692025,
+      "edge_soft_nm": 1.1691644348527637,
+      "ler_amp_nm": 1.6714303693750865,
+      "lwr_amp_nm": 0.6978204755322819,
+      "bg_val": 0.14750227380964448,
+      "fin_val": 0.8065983210469152,
+      "gate_val": 0.35565189824558807,
+      "gates": [
+        {
+          "y_nm": 4876.133971524279,
+          "width_nm": 250.5918084780007,
+          "soft_nm": 6.2805112087622,
+          "contrast": 0.4714012021559937,
+          "bow_nm": 1.0409581145942957,
+          "bow_period_nm": 8180.196402422355
+        },
+        {
+          "y_nm": 5497.764204960609,
+          "width_nm": 190.00087730606447,
+          "soft_nm": 6.407050027227588,
+          "contrast": 0.5142065763488721,
+          "bow_nm": 1.2561464471350694,
+          "bow_period_nm": 8089.454391998141
+        }
+      ],
+      "field_seeds": [
+        1281477668,
+        1758946792
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 19,
+    "architecture": "finfet",
+    "target_x_nm": 3820.379095316166,
+    "target_y_nm": 2914.6800599668295,
+    "center_x_wide_px": 382.0750639975304,
+    "center_y_wide_px": 291.45574928496154,
+    "bbox_wide_px": [
+      332.0750639975304,
+      241.45574928496154,
+      432.0750639975304,
+      341.45574928496154
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.9459404519549035,
+    "reference_scale": 0.9928490036148508,
+    "drift_amp_nm": 1.0648643296121585,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.046180702745570804,
+      "detector_azimuth_rad": 5.892236625836103,
+      "psf_sigma": 0.44930331196235485,
+      "illumination_sigma": 0.009326462469439656,
+      "detector_gain_sigma": 0.003713900500753639,
+      "correlated_noise_amp": 0.0014748781253063384,
+      "charging_blobs": 0,
+      "electron_scale": 960.2008727686789,
+      "gamma_shape": 365.8706411428755,
+      "readout_sigma": 0.001649736305674295
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.05780497415028439,
+      "detector_azimuth_rad": 5.591493501908928,
+      "psf_sigma": 0.5140634770433379,
+      "illumination_sigma": 0.007311151843375444,
+      "detector_gain_sigma": 0.007951043614024048,
+      "correlated_noise_amp": 0.004258864226174176,
+      "charging_blobs": 0,
+      "electron_scale": 504.65414338594076,
+      "gamma_shape": 215.15615087564169,
+      "readout_sigma": 0.002167000366988618
+    },
+    "layout_parameters": {
+      "pitch_nm": 30.12410204800956,
+      "fin_frac": 0.44042221154267785,
+      "phase_nm": 20.17686340563308,
+      "edge_soft_nm": 1.007430453906158,
+      "ler_amp_nm": 1.0363777626748851,
+      "lwr_amp_nm": 1.1822035944691214,
+      "bg_val": 0.16482482948784022,
+      "fin_val": 0.7035988206063708,
+      "gate_val": 0.453936402123161,
+      "gates": [
+        {
+          "y_nm": 3060.215941917852,
+          "width_nm": 210.01196786942327,
+          "soft_nm": 6.17848373771368,
+          "contrast": 0.5582456169800252,
+          "bow_nm": 0.2862157330538828,
+          "bow_period_nm": 5509.473694908354
+        }
+      ],
+      "field_seeds": [
+        1891834141,
+        436949081
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 20,
+    "architecture": "finfet",
+    "target_x_nm": 9114.26307804647,
+    "target_y_nm": 7159.079690888452,
+    "center_x_wide_px": 911.4335854110747,
+    "center_y_wide_px": 715.7577676370668,
+    "bbox_wide_px": [
+      861.4335854110747,
+      665.7577676370668,
+      961.4335854110747,
+      765.7577676370668
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.67940103806793,
+    "reference_scale": 0.9960755859734671,
+    "drift_amp_nm": 2.9510693091776865,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03591543753837987,
+      "detector_azimuth_rad": 5.611402567780693,
+      "psf_sigma": 0.5323583663584992,
+      "illumination_sigma": 0.004473197565624773,
+      "detector_gain_sigma": 0.004144529823949667,
+      "correlated_noise_amp": 0.0011039262259456809,
+      "charging_blobs": 0,
+      "electron_scale": 1016.3005363620289,
+      "gamma_shape": 390.5680402902496,
+      "readout_sigma": 0.0022241624362876206
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.04357814397402884,
+      "detector_azimuth_rad": 2.6803946297357157,
+      "psf_sigma": 0.5345721053662097,
+      "illumination_sigma": 0.009495199193853885,
+      "detector_gain_sigma": 0.004024049606632495,
+      "correlated_noise_amp": 0.003273969722245932,
+      "charging_blobs": 0,
+      "electron_scale": 601.7713754649636,
+      "gamma_shape": 164.55342395160133,
+      "readout_sigma": 0.0024904255661515684
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.008212499409247,
+      "fin_frac": 0.477010303248544,
+      "phase_nm": 27.504216426362827,
+      "edge_soft_nm": 1.4211893519927763,
+      "ler_amp_nm": 0.7739429969440558,
+      "lwr_amp_nm": 0.8143309557262074,
+      "bg_val": 0.1982798527551299,
+      "fin_val": 0.714000289755637,
+      "gate_val": 0.374497672491105,
+      "gates": [
+        {
+          "y_nm": 7334.945557217776,
+          "width_nm": 280.88215525499095,
+          "soft_nm": 8.495204178112276,
+          "contrast": 0.5265054186746926,
+          "bow_nm": 0.5177829561605467,
+          "bow_period_nm": 3577.5879568839537
+        },
+        {
+          "y_nm": 7336.206908779303,
+          "width_nm": 233.32288492179325,
+          "soft_nm": 7.319019471631768,
+          "contrast": 0.5307668571521457,
+          "bow_nm": 0.595450501823064,
+          "bow_period_nm": 4137.885590653684
+        }
+      ],
+      "field_seeds": [
+        1812172446,
+        1067015867
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 21,
+    "architecture": "finfet",
+    "target_x_nm": 6887.48250221501,
+    "target_y_nm": 3446.881441228854,
+    "center_x_wide_px": 688.7727450810772,
+    "center_y_wide_px": 344.7117020957934,
+    "bbox_wide_px": [
+      638.7727450810772,
+      294.7117020957934,
+      738.7727450810772,
+      394.7117020957934
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.6156590363189836,
+    "reference_scale": 1.0027508487820067,
+    "drift_amp_nm": 2.4289571639299323,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.045275260758369455,
+      "detector_azimuth_rad": 5.692020627253051,
+      "psf_sigma": 0.549484988178842,
+      "illumination_sigma": 0.008993456375549498,
+      "detector_gain_sigma": 0.003266958819458033,
+      "correlated_noise_amp": 0.0012046149095471586,
+      "charging_blobs": 0,
+      "electron_scale": 835.4120846083217,
+      "gamma_shape": 332.69637695950996,
+      "readout_sigma": 0.0014348344934238982
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.07484330996219049,
+      "detector_azimuth_rad": 4.498659877546406,
+      "psf_sigma": 0.6315987325148319,
+      "illumination_sigma": 0.013871047113388801,
+      "detector_gain_sigma": 0.005140600983531365,
+      "correlated_noise_amp": 0.003529187139388366,
+      "charging_blobs": 0,
+      "electron_scale": 792.8546907347627,
+      "gamma_shape": 152.20240311148203,
+      "readout_sigma": 0.004653952036812123
+    },
+    "layout_parameters": {
+      "pitch_nm": 31.456697692244116,
+      "fin_frac": 0.4684072803698748,
+      "phase_nm": 28.546408305127667,
+      "edge_soft_nm": 1.3488929080434717,
+      "ler_amp_nm": 1.2105900494421253,
+      "lwr_amp_nm": 0.9232688249380866,
+      "bg_val": 0.14852387401920752,
+      "fin_val": 0.7274331140047724,
+      "gate_val": 0.4128742986440576,
+      "gates": [
+        {
+          "y_nm": 3415.886542668516,
+          "width_nm": 261.4265869631623,
+          "soft_nm": 5.430678214456771,
+          "contrast": 0.4820475325768553,
+          "bow_nm": 1.3346111120559494,
+          "bow_period_nm": 5017.688448953082
+        }
+      ],
+      "field_seeds": [
+        31620224,
+        1176747479
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 22,
+    "architecture": "finfet",
+    "target_x_nm": 2345.004281047733,
+    "target_y_nm": 7590.238722878704,
+    "center_x_wide_px": 234.54830096997335,
+    "center_y_wide_px": 759.0329779985557,
+    "bbox_wide_px": [
+      184.54830096997335,
+      709.0329779985557,
+      284.54830096997335,
+      809.0329779985557
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.0806786152113284,
+    "reference_scale": 1.0160099695609262,
+    "drift_amp_nm": 1.364368803575519,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.02663844551051444,
+      "detector_azimuth_rad": 2.4887915286491755,
+      "psf_sigma": 0.3209750917200255,
+      "illumination_sigma": 0.005672794386754338,
+      "detector_gain_sigma": 0.0041572198892893715,
+      "correlated_noise_amp": 0.0026843226675740163,
+      "charging_blobs": 0,
+      "electron_scale": 1127.0296172691137,
+      "gamma_shape": 308.0440929369622,
+      "readout_sigma": 0.001416738654678062
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.057094927612961054,
+      "detector_azimuth_rad": 1.6878192414233812,
+      "psf_sigma": 0.6937962053791664,
+      "illumination_sigma": 0.007215368483124139,
+      "detector_gain_sigma": 0.005274475513196807,
+      "correlated_noise_amp": 0.0022144489179477585,
+      "charging_blobs": 0,
+      "electron_scale": 781.3361465031194,
+      "gamma_shape": 159.37212566936418,
+      "readout_sigma": 0.0029148209304766175
+    },
+    "layout_parameters": {
+      "pitch_nm": 33.13075566278989,
+      "fin_frac": 0.48586633060342155,
+      "phase_nm": 14.252618348273833,
+      "edge_soft_nm": 1.5944635901178401,
+      "ler_amp_nm": 0.7929392419912695,
+      "lwr_amp_nm": 0.6156776396980711,
+      "bg_val": 0.17202431964664394,
+      "fin_val": 0.702590333123257,
+      "gate_val": 0.4521943186049029,
+      "gates": [
+        {
+          "y_nm": 3574.885771034987,
+          "width_nm": 236.37975920097875,
+          "soft_nm": 5.947596239933676,
+          "contrast": 0.5403286873129598,
+          "bow_nm": 0.03084239298311986,
+          "bow_period_nm": 3743.817054820034
+        }
+      ],
+      "field_seeds": [
+        1229739913,
+        1582612918
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 23,
+    "architecture": "finfet",
+    "target_x_nm": 4602.001348993659,
+    "target_y_nm": 3079.0763319116145,
+    "center_x_wide_px": 460.1412847778678,
+    "center_y_wide_px": 307.9450952945283,
+    "bbox_wide_px": [
+      410.1412847778678,
+      257.9450952945283,
+      510.1412847778678,
+      357.9450952945283
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.23642816512507325,
+    "reference_scale": 0.9963843832038105,
+    "drift_amp_nm": 1.872757680715552,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.051598303523448616,
+      "detector_azimuth_rad": 4.458627546704637,
+      "psf_sigma": 0.3864146048653829,
+      "illumination_sigma": 0.009549503281322045,
+      "detector_gain_sigma": 0.004000917028823039,
+      "correlated_noise_amp": 0.0010127637943577645,
+      "charging_blobs": 0,
+      "electron_scale": 1048.5892763663812,
+      "gamma_shape": 381.5285236749174,
+      "readout_sigma": 0.0014162841792908826
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06708856494067963,
+      "detector_azimuth_rad": 3.6525155419339574,
+      "psf_sigma": 0.7769598840283287,
+      "illumination_sigma": 0.008279245646108234,
+      "detector_gain_sigma": 0.007203026221005773,
+      "correlated_noise_amp": 0.004665678171861365,
+      "charging_blobs": 0,
+      "electron_scale": 535.599391018035,
+      "gamma_shape": 231.6557645966635,
+      "readout_sigma": 0.0035327338866521134
+    },
+    "layout_parameters": {
+      "pitch_nm": 29.77141518008505,
+      "fin_frac": 0.4819918851943657,
+      "phase_nm": 28.24453433101286,
+      "edge_soft_nm": 1.6576135084283288,
+      "ler_amp_nm": 0.5036253085642405,
+      "lwr_amp_nm": 0.5855655785300561,
+      "bg_val": 0.14277895089262652,
+      "fin_val": 0.7671495317993116,
+      "gate_val": 0.4354805720483379,
+      "gates": [
+        {
+          "y_nm": 1208.1922577133155,
+          "width_nm": 239.16168427223673,
+          "soft_nm": 7.80126356681045,
+          "contrast": 0.5518649701245736,
+          "bow_nm": 1.8977986234607311,
+          "bow_period_nm": 5808.196280850474
+        },
+        {
+          "y_nm": 8362.741668739394,
+          "width_nm": 206.82143661280247,
+          "soft_nm": 6.681060463650942,
+          "contrast": 0.46654723827515504,
+          "bow_nm": 0.05474282927581364,
+          "bow_period_nm": 3927.0285420258033
+        }
+      ],
+      "field_seeds": [
+        902678319,
+        1573286574
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 24,
+    "architecture": "finfet",
+    "target_x_nm": 7100.727794607062,
+    "target_y_nm": 1563.1544122219702,
+    "center_x_wide_px": 710.0403931070942,
+    "center_y_wide_px": 156.27942720175406,
+    "bbox_wide_px": [
+      660.0403931070942,
+      106.27942720175406,
+      760.0403931070942,
+      206.27942720175406
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.9702845358328713,
+    "reference_scale": 0.9895641927996506,
+    "drift_amp_nm": 2.0451750705535674,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03661400882553433,
+      "detector_azimuth_rad": 5.323218757159557,
+      "psf_sigma": 0.33041007065370376,
+      "illumination_sigma": 0.00518309384611269,
+      "detector_gain_sigma": 0.002419413874166178,
+      "correlated_noise_amp": 0.0022919290916976294,
+      "charging_blobs": 0,
+      "electron_scale": 830.090676599106,
+      "gamma_shape": 266.78211141161466,
+      "readout_sigma": 0.001042674937656419
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06270077842975633,
+      "detector_azimuth_rad": 6.262046345621274,
+      "psf_sigma": 0.5496537224744611,
+      "illumination_sigma": 0.012228831454036039,
+      "detector_gain_sigma": 0.005104325216150996,
+      "correlated_noise_amp": 0.0038433729387813043,
+      "charging_blobs": 0,
+      "electron_scale": 723.2646927794417,
+      "gamma_shape": 235.6235184840032,
+      "readout_sigma": 0.0021001598719149373
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.06396001089188,
+      "fin_frac": 0.4872072569689271,
+      "phase_nm": 23.910080168702486,
+      "edge_soft_nm": 1.0040518177295183,
+      "ler_amp_nm": 1.200073253059347,
+      "lwr_amp_nm": 1.08635949295416,
+      "bg_val": 0.1512124927942172,
+      "fin_val": 0.780521315157528,
+      "gate_val": 0.3577065741571474,
+      "gates": [
+        {
+          "y_nm": 1584.676944954826,
+          "width_nm": 239.60456373101994,
+          "soft_nm": 5.657078096516546,
+          "contrast": 0.5561516381527808,
+          "bow_nm": 1.8869979742624876,
+          "bow_period_nm": 3937.2099700227946
+        }
+      ],
+      "field_seeds": [
+        1361823949,
+        1648122191
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 25,
+    "architecture": "finfet",
+    "target_x_nm": 2181.5916482231232,
+    "target_y_nm": 6264.225499251551,
+    "center_x_wide_px": 218.1321614058933,
+    "center_y_wide_px": 626.4486076095766,
+    "bbox_wide_px": [
+      168.1321614058933,
+      576.4486076095766,
+      268.13216140589327,
+      676.4486076095766
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.9320755399688645,
+    "reference_scale": 0.9843428193917015,
+    "drift_amp_nm": 1.0893925245154832,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03147470765082426,
+      "detector_azimuth_rad": 2.6048555680471153,
+      "psf_sigma": 0.3008373740802617,
+      "illumination_sigma": 0.008636913816443064,
+      "detector_gain_sigma": 0.00333746671170057,
+      "correlated_noise_amp": 0.001712354376784262,
+      "charging_blobs": 0,
+      "electron_scale": 1025.1496916550298,
+      "gamma_shape": 280.50347324753943,
+      "readout_sigma": 0.0010523848189362196
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06992851781058157,
+      "detector_azimuth_rad": 5.179029640054604,
+      "psf_sigma": 0.6226495052854605,
+      "illumination_sigma": 0.007256842285831682,
+      "detector_gain_sigma": 0.004267546168332281,
+      "correlated_noise_amp": 0.002274797861632963,
+      "charging_blobs": 0,
+      "electron_scale": 640.0499268302594,
+      "gamma_shape": 244.618703916588,
+      "readout_sigma": 0.0020204064403920143
+    },
+    "layout_parameters": {
+      "pitch_nm": 33.9176961243113,
+      "fin_frac": 0.4954257502644804,
+      "phase_nm": 31.862211422865485,
+      "edge_soft_nm": 1.2911261167561845,
+      "ler_amp_nm": 0.6207777204280633,
+      "lwr_amp_nm": 0.744751145897879,
+      "bg_val": 0.18125683266589962,
+      "fin_val": 0.6842677634377523,
+      "gate_val": 0.41067220240170843,
+      "gates": [
+        {
+          "y_nm": 6543.690240672664,
+          "width_nm": 217.38963272075412,
+          "soft_nm": 5.251447028488977,
+          "contrast": 0.5696397383838676,
+          "bow_nm": 0.37085436226702506,
+          "bow_period_nm": 6201.271403676426
+        }
+      ],
+      "field_seeds": [
+        762166060,
+        261496231
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 26,
+    "architecture": "finfet",
+    "target_x_nm": 8562.838315476572,
+    "target_y_nm": 4350.1606255304005,
+    "center_x_wide_px": 856.3155630548393,
+    "center_y_wide_px": 435.0315571589389,
+    "bbox_wide_px": [
+      806.3155630548393,
+      385.0315571589389,
+      906.3155630548393,
+      485.0315571589389
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.9349239736480117,
+    "reference_scale": 1.0026026498643608,
+    "drift_amp_nm": 1.319100146353838,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.052436887971752166,
+      "detector_azimuth_rad": 1.0009948817903458,
+      "psf_sigma": 0.5086862521438261,
+      "illumination_sigma": 0.009501799066625918,
+      "detector_gain_sigma": 0.004656956038777157,
+      "correlated_noise_amp": 0.0015032554693268476,
+      "charging_blobs": 0,
+      "electron_scale": 985.989981692312,
+      "gamma_shape": 351.5667853643322,
+      "readout_sigma": 0.0026948548602764386
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.03623760274651199,
+      "detector_azimuth_rad": 2.253864785534672,
+      "psf_sigma": 0.6961957821959214,
+      "illumination_sigma": 0.012166245507316787,
+      "detector_gain_sigma": 0.0035316465074950584,
+      "correlated_noise_amp": 0.0033036000886145665,
+      "charging_blobs": 0,
+      "electron_scale": 654.5778769796748,
+      "gamma_shape": 169.23575650157852,
+      "readout_sigma": 0.004915723603033308
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.23808557307277,
+      "fin_frac": 0.49509248630925606,
+      "phase_nm": 3.6455156399026944,
+      "edge_soft_nm": 1.2886330612209567,
+      "ler_amp_nm": 1.6871604576412336,
+      "lwr_amp_nm": 0.7145990430025797,
+      "bg_val": 0.17993000980096338,
+      "fin_val": 0.6852644015307566,
+      "gate_val": 0.41242343513420343,
+      "gates": [
+        {
+          "y_nm": 2530.4612399652824,
+          "width_nm": 198.95492722309288,
+          "soft_nm": 7.922083338044265,
+          "contrast": 0.47783259512126636,
+          "bow_nm": 0.12240229860383667,
+          "bow_period_nm": 5702.370256668282
+        },
+        {
+          "y_nm": 6064.8111753425155,
+          "width_nm": 197.98240542611205,
+          "soft_nm": 8.752143186889379,
+          "contrast": 0.5451196101931248,
+          "bow_nm": 0.6645404015580758,
+          "bow_period_nm": 5755.659008154702
+        }
+      ],
+      "field_seeds": [
+        1655885915,
+        692485750
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 27,
+    "architecture": "finfet",
+    "target_x_nm": 2676.955986391131,
+    "target_y_nm": 2733.244300068031,
+    "center_x_wide_px": 267.72485981689135,
+    "center_y_wide_px": 273.2859217107902,
+    "bbox_wide_px": [
+      217.72485981689135,
+      223.2859217107902,
+      317.72485981689135,
+      323.2859217107902
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.5079438387853572,
+    "reference_scale": 1.0059714924029552,
+    "drift_amp_nm": 1.7843517600966443,
+    "hard_case": false,
+    "contains_gate_in_ref": true,
+    "reference_noise_parameters": {
+      "edge_weight": 0.039081618885202625,
+      "detector_azimuth_rad": 5.866810844738885,
+      "psf_sigma": 0.5158508672756948,
+      "illumination_sigma": 0.009141427908227286,
+      "detector_gain_sigma": 0.004784122287798253,
+      "correlated_noise_amp": 0.0017588420221451573,
+      "charging_blobs": 0,
+      "electron_scale": 881.465940906681,
+      "gamma_shape": 358.9771063615684,
+      "readout_sigma": 0.002320366670046755
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.04423367791288393,
+      "detector_azimuth_rad": 5.518024171105624,
+      "psf_sigma": 0.6354712154245606,
+      "illumination_sigma": 0.011066773100567043,
+      "detector_gain_sigma": 0.006369713879848936,
+      "correlated_noise_amp": 0.004690460418163593,
+      "charging_blobs": 0,
+      "electron_scale": 527.0771591248933,
+      "gamma_shape": 229.801679597907,
+      "readout_sigma": 0.002909201057792535
+    },
+    "layout_parameters": {
+      "pitch_nm": 33.46802448291676,
+      "fin_frac": 0.47701706056802917,
+      "phase_nm": 6.65296917542008,
+      "edge_soft_nm": 1.0673898928836125,
+      "ler_amp_nm": 0.9412308028318637,
+      "lwr_amp_nm": 0.5849605483445074,
+      "bg_val": 0.18129696987489385,
+      "fin_val": 0.7021129976510578,
+      "gate_val": 0.3912451600632322,
+      "gates": [
+        {
+          "y_nm": 2642.371542376779,
+          "width_nm": 280.4511071164112,
+          "soft_nm": 6.4637436449223475,
+          "contrast": 0.4518247161261123,
+          "bow_nm": 1.0537026680470754,
+          "bow_period_nm": 6838.126203055901
+        }
+      ],
+      "field_seeds": [
+        298516875,
+        89287012
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 28,
+    "architecture": "finfet",
+    "target_x_nm": 9335.454434343466,
+    "target_y_nm": 7895.319673170145,
+    "center_x_wide_px": 933.6340617962966,
+    "center_y_wide_px": 789.5374215413625,
+    "bbox_wide_px": [
+      883.6340617962966,
+      739.5374215413625,
+      983.6340617962966,
+      839.5374215413625
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -0.22733288042834632,
+    "reference_scale": 1.0183181065984188,
+    "drift_amp_nm": 2.771595968940693,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.032730393526384086,
+      "detector_azimuth_rad": 6.142868771957903,
+      "psf_sigma": 0.5478189511422864,
+      "illumination_sigma": 0.008238364604614898,
+      "detector_gain_sigma": 0.0020444611494414297,
+      "correlated_noise_amp": 0.0027397246029321164,
+      "charging_blobs": 0,
+      "electron_scale": 827.4402605811223,
+      "gamma_shape": 341.4270038726322,
+      "readout_sigma": 0.0012133283026528336
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.05056101404934708,
+      "detector_azimuth_rad": 4.853437223462054,
+      "psf_sigma": 0.7581913967554097,
+      "illumination_sigma": 0.009291799992887142,
+      "detector_gain_sigma": 0.0044997893408123164,
+      "correlated_noise_amp": 0.0024759209951599275,
+      "charging_blobs": 0,
+      "electron_scale": 729.2271184289431,
+      "gamma_shape": 222.81712485119328,
+      "readout_sigma": 0.002515096382839605
+    },
+    "layout_parameters": {
+      "pitch_nm": 34.73306164707306,
+      "fin_frac": 0.50413587883152,
+      "phase_nm": 13.045348668770105,
+      "edge_soft_nm": 1.7307548152268493,
+      "ler_amp_nm": 1.520744700977045,
+      "lwr_amp_nm": 0.5611456399849755,
+      "bg_val": 0.17496063277034216,
+      "fin_val": 0.7108530962051228,
+      "gate_val": 0.4045226817950359,
+      "gates": [
+        {
+          "y_nm": 5895.796829659592,
+          "width_nm": 288.26151491132873,
+          "soft_nm": 7.959132326416985,
+          "contrast": 0.41966623452450136,
+          "bow_nm": 1.734602678893777,
+          "bow_period_nm": 8480.76698979316
+        }
+      ],
+      "field_seeds": [
+        437525390,
+        348589094
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 29,
+    "architecture": "finfet",
+    "target_x_nm": 680.2767326436635,
+    "target_y_nm": 9214.063155764048,
+    "center_x_wide_px": 68.03481078944799,
+    "center_y_wide_px": 921.3825176545685,
+    "bbox_wide_px": [
+      18.034810789447988,
+      871.3825176545685,
+      118.03481078944799,
+      971.3825176545685
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.8473385886465565,
+    "reference_scale": 1.019700905052248,
+    "drift_amp_nm": 2.367803811416228,
+    "hard_case": false,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.05303520714333909,
+      "detector_azimuth_rad": 5.06402736638798,
+      "psf_sigma": 0.3665575446937659,
+      "illumination_sigma": 0.0048932546170650845,
+      "detector_gain_sigma": 0.003580418925272686,
+      "correlated_noise_amp": 0.0026003613670822425,
+      "charging_blobs": 0,
+      "electron_scale": 815.2514970997877,
+      "gamma_shape": 368.0723629736491,
+      "readout_sigma": 0.002014203450928724
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06648490969552492,
+      "detector_azimuth_rad": 4.107926766376754,
+      "psf_sigma": 0.5895995343784117,
+      "illumination_sigma": 0.008507403906733565,
+      "detector_gain_sigma": 0.005477261122377547,
+      "correlated_noise_amp": 0.003063781684814278,
+      "charging_blobs": 0,
+      "electron_scale": 653.5408933350234,
+      "gamma_shape": 221.62045724563214,
+      "readout_sigma": 0.0022018853624220297
+    },
+    "layout_parameters": {
+      "pitch_nm": 32.78687937962401,
+      "fin_frac": 0.48594165468805195,
+      "phase_nm": 11.977977558880275,
+      "edge_soft_nm": 1.7311106333353004,
+      "ler_amp_nm": 1.283966017581585,
+      "lwr_amp_nm": 0.6699859760770235,
+      "bg_val": 0.17071401479989,
+      "fin_val": 0.69122990881877,
+      "gate_val": 0.4169106670322337,
+      "gates": [
+        {
+          "y_nm": 3536.0014412119567,
+          "width_nm": 266.53993182556593,
+          "soft_nm": 8.44546235839408,
+          "contrast": 0.4843366056404729,
+          "bow_nm": 0.6508002845089325,
+          "bow_period_nm": 5794.948922523734
+        },
+        {
+          "y_nm": 6606.677615329594,
+          "width_nm": 235.0789197436942,
+          "soft_nm": 5.953032093826291,
+          "contrast": 0.46274873126988064,
+          "bow_nm": 0.8608090634321242,
+          "bow_period_nm": 7887.503806502192
+        }
+      ],
+      "field_seeds": [
+        1363146057,
+        2114402788
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 30,
+    "architecture": "finfet",
+    "target_x_nm": 6918.8446635774635,
+    "target_y_nm": 1074.1947822831494,
+    "center_x_wide_px": 691.8512364732411,
+    "center_y_wide_px": 107.40860756076795,
+    "bbox_wide_px": [
+      641.8512364732411,
+      57.40860756076795,
+      741.8512364732411,
+      157.40860756076796
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": -1.799046544242748,
+    "reference_scale": 0.9897135320855559,
+    "drift_amp_nm": 2.13049552667362,
+    "hard_case": true,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.052493000441792295,
+      "detector_azimuth_rad": 5.662102343816603,
+      "psf_sigma": 0.4316542646726703,
+      "illumination_sigma": 0.006299308384050541,
+      "detector_gain_sigma": 0.004681573847495189,
+      "correlated_noise_amp": 0.0012719705232433634,
+      "charging_blobs": 0,
+      "electron_scale": 990.7366818972624,
+      "gamma_shape": 255.52703323755986,
+      "readout_sigma": 0.001793495364256224
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.058242594957657365,
+      "detector_azimuth_rad": 2.734127257962907,
+      "psf_sigma": 0.7462323015946831,
+      "illumination_sigma": 0.013486805884360215,
+      "detector_gain_sigma": 0.0049272099035660485,
+      "correlated_noise_amp": 0.0026086308185281704,
+      "charging_blobs": 2,
+      "electron_scale": 555.6513031767932,
+      "gamma_shape": 196.2916930318125,
+      "readout_sigma": 0.003315482220200109
+    },
+    "layout_parameters": {
+      "pitch_nm": 30.49984269392832,
+      "fin_frac": 0.5167981912521555,
+      "phase_nm": 14.546674503174977,
+      "edge_soft_nm": 1.2003744980731255,
+      "ler_amp_nm": 0.7231512334082519,
+      "lwr_amp_nm": 1.0801327637863467,
+      "bg_val": 0.14771749298489173,
+      "fin_val": 0.7525393695487275,
+      "gate_val": 0.3447614340003074,
+      "gates": [
+        {
+          "y_nm": 5580.210181753826,
+          "width_nm": 189.85750842953286,
+          "soft_nm": 6.549143794107641,
+          "contrast": 0.5216698455317079,
+          "bow_nm": 0.19529807795695286,
+          "bow_period_nm": 8589.572745344492
+        }
+      ],
+      "field_seeds": [
+        637362959,
+        957007993
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 31,
+    "architecture": "finfet",
+    "target_x_nm": 8473.87730825595,
+    "target_y_nm": 5665.624267422624,
+    "center_x_wide_px": 847.3169618434229,
+    "center_y_wide_px": 566.6736060821481,
+    "bbox_wide_px": [
+      797.3169618434229,
+      516.6736060821481,
+      897.3169618434229,
+      616.6736060821481
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 1.1523709949605965,
+    "reference_scale": 0.9966404068220607,
+    "drift_amp_nm": 2.4820910553920768,
+    "hard_case": true,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.03500150916274525,
+      "detector_azimuth_rad": 4.764426041189078,
+      "psf_sigma": 0.37528072666385065,
+      "illumination_sigma": 0.009872928808792496,
+      "detector_gain_sigma": 0.0033289641817791636,
+      "correlated_noise_amp": 0.001597025023354159,
+      "charging_blobs": 0,
+      "electron_scale": 1025.0502736140434,
+      "gamma_shape": 345.4056214901192,
+      "readout_sigma": 0.0017952666662082754
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.07274301533551776,
+      "detector_azimuth_rad": 3.0012297616358685,
+      "psf_sigma": 0.5813102345880268,
+      "illumination_sigma": 0.010492456525015771,
+      "detector_gain_sigma": 0.0032715522922433763,
+      "correlated_noise_amp": 0.0037892522503694317,
+      "charging_blobs": 0,
+      "electron_scale": 510.01784255045413,
+      "gamma_shape": 170.20081334572603,
+      "readout_sigma": 0.003334889782974605
+    },
+    "layout_parameters": {
+      "pitch_nm": 28.983079484032377,
+      "fin_frac": 0.4926833677201937,
+      "phase_nm": 7.699619972523959,
+      "edge_soft_nm": 1.829888502161245,
+      "ler_amp_nm": 0.8206337349675243,
+      "lwr_amp_nm": 0.6495035775232001,
+      "bg_val": 0.19357213154960756,
+      "fin_val": 0.7054693065892635,
+      "gate_val": 0.42109778268079207,
+      "gates": [
+        {
+          "y_nm": 2339.7187454664836,
+          "width_nm": 268.43341386471474,
+          "soft_nm": 6.3047011797294985,
+          "contrast": 0.4498239714908448,
+          "bow_nm": 0.7241121583953793,
+          "bow_period_nm": 8456.124653247636
+        }
+      ],
+      "field_seeds": [
+        157435830,
+        1278639314
+      ]
+    },
+    "random_seed": 42
+  },
+  {
+    "pair_id": 32,
+    "architecture": "finfet",
+    "target_x_nm": 1051.6440587436757,
+    "target_y_nm": 2978.587680370264,
+    "center_x_wide_px": 105.216971377488,
+    "center_y_wide_px": 297.89355182952215,
+    "bbox_wide_px": [
+      55.216971377487994,
+      247.89355182952215,
+      155.216971377488,
+      347.89355182952215
+    ],
+    "bbox_size_px": 100.0,
+    "rotation_deg": 0.21846453179634429,
+    "reference_scale": 0.9950776017902678,
+    "drift_amp_nm": 2.8692806923044265,
+    "hard_case": true,
+    "contains_gate_in_ref": false,
+    "reference_noise_parameters": {
+      "edge_weight": 0.025215855324675095,
+      "detector_azimuth_rad": 2.1040099038813085,
+      "psf_sigma": 0.4561174771121136,
+      "illumination_sigma": 0.009855544881812362,
+      "detector_gain_sigma": 0.0031966457229895733,
+      "correlated_noise_amp": 0.0027279467124931584,
+      "charging_blobs": 0,
+      "electron_scale": 916.4486951048286,
+      "gamma_shape": 301.45377620465456,
+      "readout_sigma": 0.001489200520934555
+    },
+    "search_noise_parameters": {
+      "edge_weight": 0.06247359909500245,
+      "detector_azimuth_rad": 3.0105885881916286,
+      "psf_sigma": 0.7286590512492377,
+      "illumination_sigma": 0.010018332108448423,
+      "detector_gain_sigma": 0.003981108524264351,
+      "correlated_noise_amp": 0.00487309866201375,
+      "charging_blobs": 0,
+      "electron_scale": 692.480558052569,
+      "gamma_shape": 151.73242999012277,
+      "readout_sigma": 0.003981065047535293
+    },
+    "layout_parameters": {
+      "pitch_nm": 33.26511339059668,
+      "fin_frac": 0.5084786942860097,
+      "phase_nm": 28.524388940032363,
+      "edge_soft_nm": 1.343317467710358,
+      "ler_amp_nm": 1.206342004083805,
+      "lwr_amp_nm": 0.7708541034664436,
+      "bg_val": 0.19841158377039592,
+      "fin_val": 0.770470009670829,
+      "gate_val": 0.3835434279592673,
+      "gates": [
+        {
+          "y_nm": 5464.784587900923,
+          "width_nm": 274.08174503165407,
+          "soft_nm": 8.177902500645988,
+          "contrast": 0.39485922304995413,
+          "bow_nm": 0.6645226761607237,
+          "bow_period_nm": 7088.047665504656
+        }
+      ],
+      "field_seeds": [
+        1362331876,
+        920877582
+      ]
+    },
+    "random_seed": 42
+  }
+]

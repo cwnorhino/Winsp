@@ -1,0 +1,13 @@
+{
+  "n_pairs": 33,
+  "all_passed": true,
+  "failures": [],
+  "checks": {
+    "search_structure_score_mean": 4.506829966326552,
+    "search_structure_score_min": 1.6640695229838607,
+    "search_pixel_std_mean": 15.90972105662028,
+    "all_files_valid": true,
+    "gt_bbox_nominal_size_px": 100.0,
+    "architecture": "finfet"
+  }
+}

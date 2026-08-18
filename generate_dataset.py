@@ -465,9 +465,9 @@ def write_citations(out_dir):
 def main():
     ap = argparse.ArgumentParser(description="Generate paired synthetic FinFET SEM reference/search data")
     ap.add_argument("--architecture", choices=["finfet"], default="finfet")
-    ap.add_argument("--num-pairs", "--num-samples", dest="num_pairs", type=int, default=1000)
-    ap.add_argument("--num-hard-cases", type=int, default=100)
-    ap.add_argument("--output-dir", type=str, default="./output")
+    ap.add_argument("--num-pairs", "--num-samples", dest="num_pairs", type=int, default=30)
+    ap.add_argument("--num-hard-cases", type=int, default=3)
+    ap.add_argument("--output-dir", type=str, default="./test")
     ap.add_argument("--seed", type=int, default=42)
     args = ap.parse_args()
     if args.num_pairs < 0 or args.num_hard_cases < 0:
