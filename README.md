@@ -1,6 +1,32 @@
-# Winsp -  Navigation-Error Recovery: Nanometre-Scale Site Re-localization
+# Winsp - Navigation-Error Recovery: Nanometre-Scale Site Re-localization
 
 A learned localization system for recovering the exact inspection site in a lower-magnification SEM search image from a high-magnification reference image.
+
+## Contents
+
+1. [Problem](#problem)
+2. [Contributions](#contributions)
+3. [Approach](#approach)
+
+   1. [Why Feature-Space Correlation?](#why-feature-space-correlation)
+   2. [Localization Head](#localization-head)
+4. [Synthetic SEM Dataset](#synthetic-sem-dataset)
+
+   1. [SEM Image Formation](#sem-image-formation)
+   2. [Edge Response](#edge-response)
+   3. [Noise](#noise)
+   4. [Geometric Degradation](#geometric-degradation)
+   5. [Ground Truth](#ground-truth)
+5. [Ambiguity Handling](#ambiguity-handling)
+6. [Evaluation](#evaluation)
+7. [Inference](#inference)
+8. [Repository Structure](#repository-structure)
+
+   1. [Core Modules](#core-modules)
+9. [Reproducibility](#reproducibility)
+10. [Key Design Decisions](#key-design-decisions)
+11. [References](#references)
+12. [Technical Summary](#technical-summary)
 
 ## Problem
 
@@ -12,7 +38,86 @@ The task is therefore not simply to find a visually similar patch.
 
 The system outputs the predicted search-image coordinate `(x, y)` corresponding to the reference site's center.
 
----
+## Contributions
+## Contributions
+
+Winsp was developed collaboratively, with the two major parts of the system developed independently and integrated into a common site-relocalization pipeline.
+
+### [Priyanshi](https://github.com/kirbx01)
+
+**Synthetic SEM dataset generation and acquisition modelling**
+
+[Priyanshi](https://github.com/kirbx01) 
+
+I designed and implemented the synthetic data-generation pipeline used for training and evaluating the localization system.
+
+My work covers the construction of the synthetic FinFET-style scenes, randomized inspection-site placement, paired reference/search generation, ground-truth coordinate generation, and the SEM-inspired image degradations applied to each acquisition.
+
+The dataset pipeline includes:
+
+* Procedural FinFET-like periodic structures and larger-scale layout features
+* Randomized inspection-site placement
+* Independent reference and search image generation
+* Poisson shot noise
+* Additive Gaussian detector/readout noise
+* Edge-response enhancement
+* Gaussian PSF blur
+* Rotation and scale perturbations
+* Vignetting and additional search-image degradation
+* Ground-truth physical and image-space coordinates
+
+A key part of the implementation was preserving the independence of the two simulated acquisitions. Reference and search images therefore receive separate stochastic noise realizations rather than sharing a common noise field.
+
+### Bhaskarjya Nayananju
+
+**Learned localization architecture and inference**
+
+[Bhaskarjya Nayananju](https://github.com/cwnorhino)
+
+Bhaskarjya developed the learned localization and inference components that operate on the generated SEM observations.
+
+His work covers:
+
+* Shared-weight Siamese CNN feature extraction
+* Feature-space correlation
+* Valid, unpadded correlation
+* Learned correlation calibration
+* Sub-grid offset regression
+* Backbone-aware coordinate geometry
+* Correlation-peak candidate extraction
+* Ambiguity handling for repetitive semiconductor structures
+* Localization evaluation
+* Inference-time optimization
+
+These components turn the generated reference/search pairs into a complete site-relocalization system capable of recovering the physical inspection location rather than simply identifying the most visually similar repeated pattern.
+
+### Combined System
+
+The resulting pipeline connects both contributions:
+
+```text
+Synthetic SEM Acquisition
+        │
+        │  Priyanshi
+        ↓
+Reference + Search + Ground Truth
+        │
+        │  Bhaskarjya
+        ↓
+Siamese Feature Extraction
+        ↓
+Valid Feature Correlation
+        ↓
+Candidate Localization
+        ↓
+Offset Refinement
+        ↓
+Geometry-Aware Coordinate Mapping
+        ↓
+Recovered Inspection Site
+```
+
+The separation is intentional: the dataset generation establishes a controlled but physically motivated localization problem, while the learned localization system solves that problem from the resulting observations.
 
 ## Approach
 
@@ -43,7 +148,7 @@ The reference and search images are passed through the same CNN backbone, forcin
                 Final (x, y)
 ```
 
-### Why feature-space correlation?
+### Why Feature-Space Correlation?
 
 FinFET structures contain dense periodic fins and repeated gate crossings. Direct image-level similarity can therefore produce multiple strong matches.
 
@@ -55,10 +160,12 @@ The correlation is computed only on the valid, unpadded feature grid. This prese
 
 The model produces two complementary outputs:
 
-1. **Correlation heatmap**  
+1. **Correlation heatmap**
+
    Each valid feature-grid location receives a similarity score indicating how strongly the reference corresponds to that region of the search image.
 
-2. **Sub-grid offset**  
+2. **Sub-grid offset**
+
    A lightweight offset head predicts `(dx, dy)` for the winning correlation cell, allowing the final coordinate to be refined beyond the discrete feature-grid resolution.
 
 The inference coordinate is obtained by mapping:
@@ -73,24 +180,22 @@ feature-grid cell + predicted offset
 
 The mapping is derived from the backbone geometry rather than using a fixed empirical scale factor.
 
----
-
 ## Synthetic SEM Dataset
 
 Training requires paired observations of the same physical site at different magnifications.
 
 The dataset generator renders a larger FinFET-style layout at 10× scale and derives:
 
-- **Reference:** 1000 × 1000 source pixels → 100 × 100 model input  
-- **Search:** 10000 × 10000 source pixels → 1000 × 1000 search image  
+* **Reference:** 1000 × 1000 source pixels → 100 × 100 model input
+* **Search:** 10000 × 10000 source pixels → 1000 × 1000 search image
 
 The underlying layout contains:
 
-- Dense parallel vertical FinFET fins
-- Horizontal gate structures crossing the fins
-- Larger-scale isolation / routing structures
-- Line-edge and linewidth variation
-- Randomized site locations
+* Dense parallel vertical FinFET fins
+* Horizontal gate structures crossing the fins
+* Larger-scale isolation and routing structures
+* Line-edge and linewidth variation
+* Randomized site locations
 
 Each pair records the true physical target location used to generate the reference.
 
@@ -114,7 +219,7 @@ The synthetic images are not generated by applying identical noise to both views
 
 Reference and search images represent independent physical acquisitions, so every image receives its own stochastic realization.
 
-#### Edge response
+### Edge Response
 
 Feature boundaries are enhanced using a combination of image gradients and Canny edge response before applying a blurred halo.
 
@@ -130,28 +235,28 @@ Sobel gradient magnitude
  SEM-like edge brightening
 ```
 
-#### Noise
+### Noise
 
 The acquisition model combines:
 
-- Poisson shot noise
-- Additive Gaussian detector/readout noise
-- Additional search-image degradation
+* Poisson shot noise
+* Additive Gaussian detector/readout noise
+* Additional search-image degradation
 
 The search image is intentionally noisier than the reference.
 
 Noise is generated from independent RNG streams for the two images, preventing artificial pixel-level correspondence between the pair.
 
-#### Geometric degradation
+### Geometric Degradation
 
 Reference observations are independently perturbed using:
 
-- Rotation: approximately ±3°
-- Scale: approximately 0.96–1.04×
-- Gaussian PSF blur
-- Mild astigmatic blur variation
-- Vignetting
-- Additional search-image artifacts
+* Rotation: approximately ±3°
+* Scale: approximately 0.96–1.04×
+* Gaussian PSF blur
+* Mild astigmatic blur variation
+* Vignetting
+* Additional search-image artifacts
 
 These transformations are applied while retaining the known physical target coordinate as ground truth.
 
@@ -175,11 +280,11 @@ Example:
 
 This allows localization error to be measured directly:
 
-\[
-\text{error} = \sqrt{(x_{\text{pred}} - x_{\text{gt}})^2 + (y_{\text{pred}} - y_{\text{gt}})^2}
-\]
-
----
+[
+\text{error} =
+\sqrt{(x_{\text{pred}} - x_{\text{gt}})^2 +
+(y_{\text{pred}} - y_{\text{gt}})^2}
+]
 
 ## Ambiguity Handling
 
@@ -197,32 +302,28 @@ The system:
 
 The inference code also reports the number of spatially distinct ambiguous candidates, allowing difficult periodic cases to be measured rather than hidden.
 
----
-
 ## Evaluation
 
 The self-evaluation pipeline reports:
 
-| Metric | Purpose |
-|--------|---------|
-| Mean localization error | Overall positional accuracy |
-| Median localization error | Robust central error |
-| Success @ tolerance | Fraction of predictions within the target tolerance |
-| Normal-case success | Performance on ordinary samples |
-| Hard-case success | Performance on ambiguous samples |
-| Mean inference time | Runtime per localization |
-| Ambiguous-match fraction | Frequency of multiple plausible candidates |
+| Metric                    | Purpose                                             |
+| ------------------------- | --------------------------------------------------- |
+| Mean localization error   | Overall positional accuracy                         |
+| Median localization error | Robust central error                                |
+| Success @ tolerance       | Fraction of predictions within the target tolerance |
+| Normal-case success       | Performance on ordinary samples                     |
+| Hard-case success         | Performance on ambiguous samples                    |
+| Mean inference time       | Runtime per localization                            |
+| Ambiguous-match fraction  | Frequency of multiple plausible candidates          |
 
 The primary localization metric is the Euclidean error between predicted and ground-truth search coordinates.
-
----
 
 ## Inference
 
 The inference interface accepts:
 
-- Reference image
-- Search image
+* Reference image
+* Search image
 
 ```text
       ↓
@@ -238,8 +339,6 @@ Offset refinement
 ```
 
 Inference uses `torch.inference_mode()` and GPU-side local-maxima extraction. For the fixed 100 × 100 / 1000 × 1000 input configuration, cuDNN benchmarking is enabled so convolution kernels can be optimized for the deployment shapes.
-
----
 
 ## Repository Structure
 
@@ -259,24 +358,22 @@ Inference uses `torch.inference_mode()` and GPU-side local-maxima extraction. Fo
 └── README.md
 ```
 
-### Core modules
+### Core Modules
 
-- **model.py**  
+* **model.py**
   Siamese CNN backbone, feature correlation, and offset-regression head.
 
-- **geometry.py**  
+* **geometry.py**
   Maps feature-grid coordinates to image coordinates using the actual backbone geometry.
 
-- **dataset.py**  
+* **dataset.py**
   Builds training samples and localization targets on the valid correlation grid.
 
-- **generate_dataset.py**  
+* **generate_dataset.py**
   Generates the synthetic FinFET SEM dataset and ground-truth coordinates.
 
-- **inference.py**  
+* **inference.py**
   Runs localization, candidate extraction, ambiguity handling, coordinate refinement, and evaluation.
-
----
 
 ## Reproducibility
 
@@ -298,36 +395,39 @@ python inference.py \
     --device cuda
 ```
 
----
-
 ## Key Design Decisions
 
-- **Learned matching instead of raw template matching**  
-  The system learns a feature representation before correlation, allowing the matching function to be optimized for the localization task rather than relying on raw pixel similarity.
+### Learned Matching Instead of Raw Template Matching
 
-- **Valid correlation instead of padded correlation**  
-  Only physically valid feature correspondences are retained. This prevents artificial border regions from becoming part of the localization signal.
+The system learns a feature representation before correlation, allowing the matching function to be optimized for the localization task rather than relying on raw pixel similarity.
 
-- **Explicit coordinate geometry**  
-  Feature-grid coordinates are converted back to image coordinates using the backbone's receptive-field and stride geometry.
+### Valid Correlation Instead of Padded Correlation
 
-- **Independent image acquisition noise**  
-  Reference and search images never share the same noise realization.
+Only physically valid feature correspondences are retained. This prevents artificial border regions from becoming part of the localization signal.
 
-- **Confidence before proximity**  
-  The search-frame center is used only to resolve genuinely near-tied candidates rather than overriding a substantially stronger match.
+### Explicit Coordinate Geometry
 
----
+Feature-grid coordinates are converted back to image coordinates using the backbone's receptive-field and stride geometry.
+
+### Independent Image Acquisition Noise
+
+Reference and search images never share the same noise realization.
+
+### Confidence Before Proximity
+
+The search-frame center is used only to resolve genuinely near-tied candidates rather than overriding a substantially stronger match.
 
 ## References
 
-1. Bertinetto et al., *Fully-Convolutional Siamese Networks for Object Tracking*, ECCV Workshops, 2016.  
-2. Goldstein et al., *Scanning Electron Microscopy and X-Ray Microanalysis*.  
-3. Reimer, *Scanning Electron Microscopy: Physics of Image Formation and Microanalysis*.  
-4. SPIE semiconductor lithography literature on line-edge roughness and linewidth roughness.  
-5. Applied Materials — Navigation-Error Recovery problem statement and challenge specification.
-
----
+1. Bertinetto, L., Valmadre, J., Henriques, J. F., Vedaldi, A., and Torr, P. H. S. *Fully-Convolutional Siamese Networks for Object Tracking*. ECCV Workshops, 2016.
+2. Lewis, J. P. *Fast Template Matching*. Vision Interface, 1995.
+3. Utkin, L. V., Kovalev, M. S., and Kasimov, E. M. *An Explanation Method for Siamese Neural Networks*. arXiv:1911.07702, 2019.
+4. Canny, J. *A Computational Approach to Edge Detection*. IEEE Transactions on Pattern Analysis and Machine Intelligence, 8(6), 679–698, 1986.
+5. Reimer, L. *Scanning Electron Microscopy: Physics of Image Formation and Microanalysis*. Springer.
+6. Goldstein, J., Newbury, D. E., Joy, D. C., Lyman, C. E., Echlin, P., Lifshin, E., Sawyer, L., and Michael, J. *Scanning Electron Microscopy and X-Ray Microanalysis*. Springer.
+7. EstimateNoiseSEM: *A novel framework for deep learning based noise estimation of scanning electron microscopy images*. Ultramicroscopy, 276, 114192, 2025.
+8. *Applications of deep learning-based denoising methodologies for scanning electron microscope images*. Measurement Science and Technology.
+9. cwnorhino. *Winsp: Navigation-Error Recovery: Nanometre-Scale Site Re-localization*. GitHub repository.
 
 ## Technical Summary
 
