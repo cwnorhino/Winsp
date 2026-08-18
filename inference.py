@@ -25,20 +25,23 @@ def to_tensor(img):
 
 
 def find_local_maxima(hm, rel_thresh=0.85):
-    # rel_thresh raised from 0.5: the fin pitch downsamples to under 1 grid
-    # cell at this backbone's stride, so the correlation surface has
-    # periodic sidelobe ripple packed tighter than a 3x3 NMS window can
-    # suppress. A loose threshold lets thousands of ripple-noise pixels
-    # count as "candidates" (e.g. 2254 raw / 929 "distinct" on one frame),
-    # which drowns out genuine matches even after the score-based tie-break
-    # fix above. Tighten further (closer to 0.95) if candidate counts are
-    # still in the hundreds on real matches after retraining.
     t = torch.from_numpy(hm).unsqueeze(0).unsqueeze(0)
     pooled = F.max_pool2d(t, kernel_size=3, stride=1, padding=1)
     keep = (t == pooled).squeeze().numpy()
+
     peak_val = hm.max()
-    ys, xs = np.where(keep & (hm > rel_thresh * peak_val))
-    return [(int(y), int(x), float(hm[y, x])) for y, x in zip(ys, xs)]
+    floor_val = hm.min()
+    margin = (peak_val - floor_val) * (1.0 - rel_thresh)
+    thresh = peak_val - margin
+
+    ys, xs = np.where(keep & (hm >= thresh))
+    candidates = [(int(y), int(x), float(hm[y, x])) for y, x in zip(ys, xs)]
+
+    if not candidates:
+        y, x = np.unravel_index(np.argmax(hm), hm.shape)
+        candidates = [(int(y), int(x), float(hm[y, x]))]
+
+    return candidates
 
 
 def localize(model, ref_img, search_img, device, debug=False):
