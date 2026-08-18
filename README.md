@@ -7,11 +7,9 @@ A learned localization system for recovering the exact inspection site in a lowe
 1. [Problem](#problem)
 2. [Contributions](#contributions)
 3. [Approach](#approach)
-
    1. [Why Feature-Space Correlation?](#why-feature-space-correlation)
    2. [Localization Head](#localization-head)
 4. [Synthetic SEM Dataset](#synthetic-sem-dataset)
-
    1. [SEM Image Formation](#sem-image-formation)
    2. [Edge Response](#edge-response)
    3. [Noise](#noise)
@@ -21,7 +19,6 @@ A learned localization system for recovering the exact inspection site in a lowe
 6. [Evaluation](#evaluation)
 7. [Inference](#inference)
 8. [Repository Structure](#repository-structure)
-
    1. [Core Modules](#core-modules)
 9. [Reproducibility](#reproducibility)
 10. [Key Design Decisions](#key-design-decisions)
