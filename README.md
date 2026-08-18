@@ -39,7 +39,6 @@ The task is therefore not simply to find a visually similar patch.
 The system outputs the predicted search-image coordinate `(x, y)` corresponding to the reference site's center.
 
 ## Contributions
-## Contributions
 
 Winsp was developed collaboratively, with the two major parts of the system developed independently and integrated into a common site-relocalization pipeline.
 
@@ -47,11 +46,9 @@ Winsp was developed collaboratively, with the two major parts of the system deve
 
 **Synthetic SEM dataset generation and acquisition modelling**
 
-[Priyanshi](https://github.com/kirbx01) 
+Priyanshi designed and implemented the synthetic data-generation pipeline used for training and evaluating the localization system.
 
-I designed and implemented the synthetic data-generation pipeline used for training and evaluating the localization system.
-
-My work covers the construction of the synthetic FinFET-style scenes, randomized inspection-site placement, paired reference/search generation, ground-truth coordinate generation, and the SEM-inspired image degradations applied to each acquisition.
+Her work covers the construction of the synthetic FinFET-style scenes, randomized inspection-site placement, paired reference/search generation, ground-truth coordinate generation, and the SEM-inspired image degradations applied to each acquisition.
 
 The dataset pipeline includes:
 
@@ -68,11 +65,9 @@ The dataset pipeline includes:
 
 A key part of the implementation was preserving the independence of the two simulated acquisitions. Reference and search images therefore receive separate stochastic noise realizations rather than sharing a common noise field.
 
-### Bhaskarjya Nayananju
+### [Bhaskarjya Nayananju](https://github.com/cwnorhino)
 
 **Learned localization architecture and inference**
-
-[Bhaskarjya Nayananju](https://github.com/cwnorhino)
 
 Bhaskarjya developed the learned localization and inference components that operate on the generated SEM observations.
 
